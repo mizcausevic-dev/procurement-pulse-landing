@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Procurement Pulse — a quarterly index of vendor AI governance disclosure</title>
+  <meta name="description" content="The AI Procurement Pulse is a quarterly index of how AI vendors publicly disclose their governance posture — read straight from .well-known/ endpoints across Fortune 500, top EdTech, and top HealthTech vendors. Issue #1 lands Q3 2026." />
+  <meta name="theme-color" content="#10b981" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Procurement Pulse — the quarterly disclosure index" />
+  <meta property="og:description" content="Cloudflare Radar for AI procurement. Quarterly published index of which vendors publicly disclose their AI governance posture via the Kinetic Gain Protocol Suite. Methodology, sample data, sign-up for Issue #1 (Q3 2026)." />
+  <meta property="og:url" content="https://pulse.kineticgain.com/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="brand" aria-label="AI Procurement Pulse home">
+        <span class="brand-mark" aria-hidden="true">〰️</span>
+        <span class="brand-text">
+          <strong>AI Procurement Pulse</strong>
+          <small>Kinetic Gain Research · Quarterly</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#methodology">Methodology</a>
+        <a href="#preview">Preview</a>
+        <a href="#issue1">Issue #1</a>
+        <a class="cta" href="#subscribe">Subscribe ↓</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="pill mono">ISSUE #0 · MAY 2026 · METHODOLOGY</span>
+        <h1>The quarterly index of <span class="accent">vendor AI governance disclosure.</span></h1>
+        <p class="lede">
+          The AI Procurement Pulse measures, every ninety days, what AI vendors actually publish about
+          themselves at <code>/.well-known/</code> — Agent Cards, Tool Cards, Clinical AI Disclosures,
+          Procurement Decision Cards, the full <a href="https://suite.kineticgain.com/" target="_blank" rel="noreferrer">Kinetic Gain Protocol Suite</a>.
+          We read the open internet, score what's there, and report what isn't.
+        </p>
+        <p class="lede">
+          <strong>Issue #1 lands Q3 2026 (July).</strong> This is the methodology issue — what we're going to count, how, and why.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#subscribe">Get Issue #1 by email</a>
+          <a class="btn btn-secondary" href="#methodology">Read the methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics-strip">
+      <div class="block-inner">
+        <div class="metric">
+          <div class="metric-num mono">11</div>
+          <div class="metric-label">Open specs measured</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num mono">~1,200</div>
+          <div class="metric-label">Vendor domains in scope · Issue #1</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num mono">Q1, Q2, Q3, Q4</div>
+          <div class="metric-label">Publication cadence</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num mono">$0</div>
+          <div class="metric-label">Public-edition price</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="block">
+      <div class="block-inner">
+        <h2>Why the world needs a procurement Pulse</h2>
+        <p class="prose">
+          A school district vetting an AI tutor today reads a 40-page vendor whitepaper, a HIPAA attestation, and
+          a marketing PDF. A hospital vetting a clinical-decision-support tool does the same. A federal agency does the same.
+          Every buyer reinvents the same review wheel because vendors don't disclose in a comparable format.
+        </p>
+        <p class="prose">
+          The Suite ships an open substrate that makes disclosure machine-readable. The Pulse measures who's using it —
+          and, more importantly, who isn't. Vendors that publish appear on the public scoreboard. Vendors that don't
+          appear on the same scoreboard with a blank cell. Buyers cite the report. Regulators reference it.
+          The race-to-the-top mechanism has, until now, been missing.
+        </p>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>For buyers</h3>
+            <p>One canonical place to compare vendor disclosure posture before procurement starts. Filter by vertical (EdTech, HealthTech, FinTech), by required field (HIPAA, FDA SaMD, FERPA), by signature status.</p>
+          </article>
+          <article class="card">
+            <h3>For vendors</h3>
+            <p>Quarterly visibility into your peers' disclosure posture. If your direct competitors are publishing their Agent Cards and you aren't, the Pulse makes that gap legible to your prospects.</p>
+          </article>
+          <article class="card">
+            <h3>For regulators</h3>
+            <p>An evidence base for what self-disclosure can and cannot achieve in the AI market, refreshed every ninety days. Comparable across verticals, replicable methodology, no vendor cooperation required.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="preview" class="block block-tinted">
+      <div class="block-inner">
+        <h2>Preview — what Issue #1 will look like</h2>
+        <p class="prose">
+          These charts are <strong>projected, illustrative mocks</strong>. Issue #1 (Q3 2026) replaces them with
+          real crawl data from ~1,200 vendor domains.
+        </p>
+
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <h3>Disclosure publication rate by vertical</h3>
+            <span class="preview-tag mono">PROJECTED · ILLUSTRATIVE</span>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <div class="bar-label">FinTech</div>
+              <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+              <div class="bar-val mono">62%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">EdTech</div>
+              <div class="bar-track"><div class="bar-fill" style="width:45%"></div></div>
+              <div class="bar-val mono">45%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">HealthTech</div>
+              <div class="bar-track"><div class="bar-fill" style="width:38%"></div></div>
+              <div class="bar-val mono">38%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Federal contractors</div>
+              <div class="bar-track"><div class="bar-fill" style="width:29%"></div></div>
+              <div class="bar-val mono">29%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">CPG / Retail</div>
+              <div class="bar-track"><div class="bar-fill" style="width:12%"></div></div>
+              <div class="bar-val mono">12%</div>
+            </div>
+          </div>
+          <p class="preview-caption">
+            % of in-scope vendor domains in each vertical publishing <em>any</em> Suite document at <code>/.well-known/</code>.
+            Higher = more transparent procurement posture.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="preview-card">
+            <div class="preview-card-header">
+              <h3>Signed-vs-unsigned ratio</h3>
+              <span class="preview-tag mono">PROJECTED</span>
+            </div>
+            <div class="donut-mock">
+              <div class="donut">
+                <div class="donut-segment signed"></div>
+                <div class="donut-center">
+                  <div class="donut-num mono">23%</div>
+                  <div class="donut-sub">ed25519-signed</div>
+                </div>
+              </div>
+              <ul class="donut-legend">
+                <li><span class="dot dot-emerald"></span> Signed via <code>hash-attestation-rs</code> · 23%</li>
+                <li><span class="dot dot-slate"></span> Unsigned · 77%</li>
+              </ul>
+            </div>
+          </div>
+          <div class="preview-card">
+            <div class="preview-card-header">
+              <h3>Drift events per 1k checks</h3>
+              <span class="preview-tag mono">PROJECTED</span>
+            </div>
+            <div class="trend-mock">
+              <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="trend-svg">
+                <defs>
+                  <linearGradient id="trendGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,80 L40,72 L80,76 L120,64 L160,58 L200,52 L240,42 L280,38 L320,30 L320,120 L0,120 Z" fill="url(#trendGrad)"/>
+                <path d="M0,80 L40,72 L80,76 L120,64 L160,58 L200,52 L240,42 L280,38 L320,30" stroke="#10b981" stroke-width="2" fill="none"/>
+              </svg>
+              <div class="trend-axes mono">
+                <span>Q3 '26</span><span>Q4 '26</span><span>Q1 '27</span><span>Q2 '27</span><span>Q3 '27</span>
+              </div>
+              <p class="preview-caption">Hypothetical drift rate over four quarters as adoption matures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="methodology" class="block">
+      <div class="block-inner">
+        <h2>The methodology, end-to-end</h2>
+        <p class="prose">
+          Every step is open-source. Every data point is publicly fetchable. The Pulse is reproducible by anyone who
+          runs the same crawl against the same universe of domains on the same day.
+        </p>
+        <ol class="numbered">
+          <li><strong>Universe selection.</strong> Issue #1: Fortune 500 + top 100 K-12 EdTech vendors (from EdTech Top 40 lists) + top 50 HealthTech AI vendors (FDA-cleared SaMD + clinical-decision-support market). ~1,200 domains. Published as <code>universe.csv</code> alongside the issue.</li>
+          <li><strong>Crawl.</strong> <a href="https://github.com/mizcausevic-dev/aeo-crawler" target="_blank" rel="noreferrer"><code>aeo-crawler</code></a> against each domain's <code>/.well-known/</code> for the eleven Suite documents. JSON Lines output, hashed for replay.</li>
+          <li><strong>Validate.</strong> Every fetched document goes through <a href="https://validator.kineticgain.com/" target="_blank" rel="noreferrer"><code>aeo-validator-service</code></a>. Invalid documents are flagged but counted as <em>published</em> for the publication-rate numerator.</li>
+          <li><strong>Signature check.</strong> If a document references a <code>signing_key_url</code>, <a href="https://github.com/mizcausevic-dev/hash-attestation-rs" target="_blank" rel="noreferrer"><code>hash-attestation-rs</code></a> verifies the ed25519 signature against the canonical-JSON hash.</li>
+          <li><strong>Drift detection.</strong> Each domain's documents are re-fetched fourteen days into the quarter. Any document whose <code>content_hash</code> changes without a corresponding version bump is logged as a drift event.</li>
+          <li><strong>Reporting.</strong> Aggregated metrics (publication rate, validity rate, signature rate, drift rate) by vertical, by spec, by signed-status. Per-vendor rows go into the premium edition; public edition reports aggregate-only.</li>
+        </ol>
+        <p class="prose">
+          The crawl runs from a US-East datacenter with a standard user-agent (<code>kineticgain-pulse-crawler/1.0</code>),
+          respects <code>robots.txt</code>, rate-limits to 10 req/s per origin, and identifies itself with a contact email
+          in the User-Agent string. No authentication. No headless browser. No vendor cooperation needed.
+        </p>
+      </div>
+    </section>
+
+    <section id="issue1" class="block block-tinted">
+      <div class="block-inner">
+        <h2>What's in Issue #1 — Q3 2026 (July)</h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3 class="mono accent-text">§ 1 · The Public Index</h3>
+            <p>Aggregate publication rates across the ~1,200-domain universe. By vertical, by spec, by signed-status. Reproducible. Reusable.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono accent-text">§ 2 · The Vertical Deep-Dives</h3>
+            <p>One per regulated vertical (EdTech, HealthTech, FinTech). What's required by law vs. what's published. Where the gap is widest.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono accent-text">§ 3 · The Drift Report</h3>
+            <p>Which vendor documents changed silently between snapshots, and by how much. The first quantitative answer to "is anyone actually maintaining these documents."</p>
+          </article>
+          <article class="card">
+            <h3 class="mono accent-text">§ 4 · The Decision Card Watch</h3>
+            <p>How many buyers — districts, hospitals, agencies — published <a href="https://decisions.kineticgain.com/" target="_blank" rel="noreferrer">AI Procurement Decision Cards</a> this quarter. Buyer-side adoption is the harder half.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono accent-text">§ 5 · The Signature Honor Roll</h3>
+            <p>Every vendor whose Suite documents are cryptographically signed. Public, named, alphabetized. Quiet pressure on the unsigned majority.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono accent-text">§ 6 · The Methodology Appendix</h3>
+            <p>Full crawl logs, universe.csv, validator output. Every claim in the report has a reproducible artifact you can pull and rerun yourself.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscribe" class="cta-strip">
+      <div class="cta-strip-inner">
+        <span class="pill mono">QUARTERLY · FREE PUBLIC EDITION</span>
+        <h2>Get Issue #1 the moment it lands.</h2>
+        <p>One email per quarter. No marketing list rentals, no surprise newsletters, no upsells you didn't ask for.</p>
+        <form class="subscribe-form" action="" method="post" onsubmit="return handleSubmit(event)">
+          <input type="email" name="email" placeholder="you@workdomain.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="cta-fineprint">
+          Or just bookmark this page. Or email <a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> and we'll add you manually.
+          Issue #1 ships <strong>Q3 2026 (July)</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner">
+        <h2>What this is, in one paragraph</h2>
+        <p class="prose">
+          The AI Procurement Pulse is a quarterly research publication that measures AI vendor governance disclosure using
+          the open <a href="https://suite.kineticgain.com/" target="_blank" rel="noreferrer">Kinetic Gain Protocol Suite</a>
+          as its substrate. It exists because AI procurement is the largest under-measured market in software, the
+          disclosure data is publicly fetchable today, and nobody has built a recurring index of who's publishing what.
+          We're building it. Issue #1 ships in July. Subscribe.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <div class="foot-col">
+        <strong>AI Procurement Pulse</strong>
+        <p>A Kinetic Gain Research publication. Quarterly. Free public edition; premium per-vendor edition coming Q4 2026.</p>
+      </div>
+      <div class="foot-col">
+        <strong>Built on</strong>
+        <ul>
+          <li><a href="https://suite.kineticgain.com/">Kinetic Gain Protocol Suite</a></li>
+          <li><a href="https://github.com/mizcausevic-dev/aeo-crawler">aeo-crawler</a></li>
+          <li><a href="https://validator.kineticgain.com/">aeo-validator-service</a></li>
+          <li><a href="https://github.com/mizcausevic-dev/hash-attestation-rs">hash-attestation-rs</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <strong>Contact</strong>
+        <p><a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> · <a href="https://kineticgain.com/">Kinetic Gain LLC</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const email = e.target.email.value;
+      if (!email) return false;
+      window.location.href = `mailto:pulse@kineticgain.com?subject=Subscribe%20to%20AI%20Procurement%20Pulse&body=Please%20add%20me%20to%20the%20Pulse%20subscriber%20list.%0A%0AEmail%3A%20${encodeURIComponent(email)}`;
+      return false;
+    }
+  </script>
+</body>
+</html>

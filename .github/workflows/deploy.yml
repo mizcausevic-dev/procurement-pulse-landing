@@ -1,0 +1,87 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: FTP-sync static site to pulse.kineticgain.com
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify site root contains AI Procurement Pulse landing
+        run: |
+          test -f index.html || (echo "FAIL: no index.html at repo root" && exit 1)
+          grep -q "AI Procurement Pulse" index.html || (echo "FAIL: index.html does not mention AI Procurement Pulse" && exit 1)
+          echo "OK: site root verified"
+          ls -lah
+
+      - name: FTP-Deploy to /pulse/ (first attempt)
+        id: deploy
+        timeout-minutes: 5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        continue-on-error: true
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps
+          port: 21
+          timeout: 60000
+          local-dir: ./
+          server-dir: /pulse/
+          dangerous-clean-slate: false
+          log-level: standard
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/.DS_Store
+            **/README.md
+            **/LICENSE
+            **/.gitignore
+            **/.claude/**
+
+      - name: Retry FTP-Deploy if first attempt failed
+        if: steps.deploy.outcome == 'failure'
+        timeout-minutes: 5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps
+          port: 21
+          timeout: 90000
+          local-dir: ./
+          server-dir: /pulse/
+          dangerous-clean-slate: false
+          log-level: verbose
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/.DS_Store
+            **/README.md
+            **/LICENSE
+            **/.gitignore
+            **/.claude/**
+
+      - name: Post-deploy verification
+        run: |
+          sleep 5
+          status=$(curl -sIo /dev/null -w "%{http_code}" "https://pulse.kineticgain.com/")
+          if [ "$status" = "200" ]; then
+            echo "OK: https://pulse.kineticgain.com/ -> 200"
+          else
+            echo "FAIL: https://pulse.kineticgain.com/ -> $status"
+            exit 1
+          fi
