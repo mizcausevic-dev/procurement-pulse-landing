@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Procurement Pulse · Issue #1 — The Zero Baseline</title>
+  <meta name="description" content="Issue #1 of the AI Procurement Pulse. The first real crawl of vendor AI governance disclosure: 0.0% of 37 domains across 9 verticals publish any Kinetic Gain Protocol Suite document. The honest starting line." />
+  <meta name="theme-color" content="#10b981" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="AI Procurement Pulse · Issue #1 — The Zero Baseline" />
+  <meta property="og:description" content="The first real crawl: 0.0% of 37 vendor domains publish any machine-readable AI governance disclosure. Nobody discloses yet — including us. This is the starting line." />
+  <meta property="og:url" content="https://pulse.kineticgain.com/issue-1/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .big-stat {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, var(--pulse-emerald-900) 100%);
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+    .big-stat .num {
+      font-family: var(--font-mono);
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .big-stat .cap { color: var(--pulse-emerald-300); font-size: 1.05rem; margin-top: 0.75rem; }
+    .ds-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: #fff; border: 1px solid var(--slate-200); border-radius: 12px; overflow: hidden; font-size: 0.92rem; }
+    .ds-table th, .ds-table td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--slate-200); }
+    .ds-table th { background: var(--slate-100); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--slate-600); }
+    .ds-table tbody tr:last-child td { border-bottom: none; }
+    .ds-table .zero { font-family: var(--font-mono); color: var(--slate-400); }
+    .ds-table td:last-child, .ds-table th:last-child { text-align: right; }
+    .breadcrumb { font-size: 0.85rem; color: var(--slate-500); margin-bottom: 0.5rem; }
+    .breadcrumb a { color: var(--pulse-emerald-700); }
+    .callout { border-left: 3px solid var(--pulse-emerald-500); background: #ecfdf5; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem; color: var(--slate-700); }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="brand" aria-label="AI Procurement Pulse home">
+        <span class="brand-mark" aria-hidden="true">〰️</span>
+        <span class="brand-text">
+          <strong>AI Procurement Pulse</strong>
+          <small>Kinetic Gain Research · Quarterly</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/">Issue #0</a>
+        <a href="/#methodology">Methodology</a>
+        <a class="cta" href="/#subscribe">Subscribe ↓</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="breadcrumb"><a href="/">AI Procurement Pulse</a> → Issue #1</p>
+        <span class="pill mono">ISSUE #1 · MAY 2026 · THE ZERO BASELINE</span>
+        <h1>Nobody publishes machine-readable AI governance disclosure yet. <span class="accent">Including us.</span></h1>
+        <p class="lede">
+          The first real crawl of the AI Procurement Pulse is in. We probed <strong>37 vendor domains</strong> across
+          <strong>9 verticals</strong> for all eleven <a href="https://suite.kineticgain.com/" target="_blank" rel="noreferrer">Kinetic Gain Protocol Suite</a>
+          documents at their <code>/.well-known/</code> paths. The result is unambiguous — and honest.
+        </p>
+        <div class="big-stat">
+          <div class="num">0.0%</div>
+          <div class="cap">of 37 domains publish any Suite document · average disclosure score 0 / 100</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner">
+        <h2>This is the starting line, not a verdict</h2>
+        <p class="prose">
+          The Suite shipped in 2025. Machine-readable AI vendor disclosure is a brand-new practice, and a brand-new
+          practice begins at zero. Issue #1 exists to <strong>calibrate the instrument and mark that zero</strong> — so
+          every future issue can measure the climb against a real, reproducible baseline rather than a vibe.
+        </p>
+        <p class="prose">
+          We held ourselves to the same ruler. Kinetic Gain's own properties — <code>kineticgain.com</code>,
+          <code>suite.kineticgain.com</code>, <code>clinical.kineticgain.com</code>, <code>decisions.kineticgain.com</code> —
+          are in the universe, and they score zero too. You can't run a disclosure index where the author is exempt.
+          Dogfooding our own specs is the first item on the Issue #2 docket.
+        </p>
+        <div class="callout">
+          <strong>Methodology integrity note.</strong> The zero is real, not a probe artifact. The crawler is
+          discriminator-aware — a <code>200 OK</code> serving unrelated JSON at a well-known path is <em>not</em> counted
+          as a published spec. Every domain genuinely publishes nothing at these paths today.
+        </div>
+      </div>
+    </section>
+
+    <section class="block block-tinted">
+      <div class="block-inner">
+        <h2>The universe — by vertical</h2>
+        <p class="prose">37 domains, hand-selected to span the AI buying market. Publication rate is the share of domains in each vertical publishing <em>any</em> Suite document.</p>
+        <table class="ds-table">
+          <thead><tr><th>Vertical</th><th>Domains</th><th>Publishing</th><th>Rate</th></tr></thead>
+          <tbody>
+            <tr><td>AI Platform</td><td>9</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>EdTech</td><td>7</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>HealthTech</td><td>5</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>Enterprise SaaS</td><td>4</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>Reference (Kinetic Gain)</td><td>4</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>FinTech</td><td>3</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>Data</td><td>2</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>Identity</td><td>2</td><td>0</td><td class="zero">0.0%</td></tr>
+            <tr><td>Observability</td><td>1</td><td>0</td><td class="zero">0.0%</td></tr>
+          </tbody>
+        </table>
+        <p class="preview-caption" style="margin-top:1rem;color:var(--slate-500);font-size:0.85rem;">
+          Domains include OpenAI, Anthropic, Google, Microsoft, Khan Academy, Duolingo, Tempus, PathAI, Stripe,
+          Salesforce, ServiceNow, Snowflake, Okta, CyberArk, and more. Full universe + raw results:
+          <a href="data.json">issue-1/data.json</a> · <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine" target="_blank" rel="noreferrer">procurement-pulse-engine</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner">
+        <h2>Per-spec adoption</h2>
+        <p class="prose">All eleven specs were probed at every domain. Every cell is zero — this table is the scoreboard future issues fill in.</p>
+        <table class="ds-table">
+          <thead><tr><th>Spec</th><th>Well-known path</th><th>Publishers</th></tr></thead>
+          <tbody>
+            <tr><td>AEO Protocol</td><td><code>/.well-known/aeo.json</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>Agent Cards</td><td><code>/.well-known/agents/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>Prompt Provenance</td><td><code>/.well-known/prompts/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>AI Evidence Format</td><td><code>/.well-known/evidence/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>MCP Tool Cards</td><td><code>/.well-known/tool-cards/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>AI Tutor Cards</td><td><code>/.well-known/tutor-cards/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>Student AI Disclosure</td><td><code>/.well-known/student-ai/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>Classroom AI AUP</td><td><code>/.well-known/aup.json</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>Clinical AI Disclosure</td><td><code>/.well-known/clinical-ai/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>AI Incident Card</td><td><code>/.well-known/incidents/</code></td><td class="zero">0 / 37</td></tr>
+            <tr><td>AI Procurement Decision Card</td><td><code>/.well-known/decisions/</code></td><td class="zero">0 / 37</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block block-tinted">
+      <div class="block-inner">
+        <h2>What changes this number</h2>
+        <p class="prose">
+          Adoption climbs when buyers start asking for it. A district that publishes an
+          <a href="https://decisions.kineticgain.com/" target="_blank" rel="noreferrer">AI Procurement Decision Card</a>
+          forces the vendors it reviews to publish the declarations that card cites. The fastest path off zero is
+          procurement pressure, not vendor goodwill.
+        </p>
+        <p class="prose">
+          <strong>Roadmap.</strong> Issue #2 expands the universe toward the full ~1,200-domain target (Fortune 500 +
+          top 100 K-12 EdTech + top 50 HealthTech AI), adds signature verification, and reports the first drift deltas.
+          And it will show Kinetic Gain's own properties as the first non-zero row — we publish before we ask anyone else to.
+        </p>
+        <div class="hero-cta" style="margin-top:2rem;">
+          <a class="btn btn-primary" href="/#subscribe">Get Issue #2 by email</a>
+          <a class="btn btn-secondary" href="https://github.com/mizcausevic-dev/procurement-pulse-engine" target="_blank" rel="noreferrer">Reproduce this crawl</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <div class="foot-col">
+        <strong>AI Procurement Pulse · Issue #1</strong>
+        <p>The Zero Baseline · May 2026. A Kinetic Gain Research publication. Free public edition under CC BY 4.0.</p>
+      </div>
+      <div class="foot-col">
+        <strong>Reproduce it</strong>
+        <ul>
+          <li><a href="data.json">issue-1/data.json</a> — the dataset</li>
+          <li><a href="https://github.com/mizcausevic-dev/procurement-pulse-engine">procurement-pulse-engine</a> — the crawler</li>
+          <li><a href="https://github.com/mizcausevic-dev/well-known-probe-js">well-known-probe-js</a> — the probe core</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <strong>Contact</strong>
+        <p><a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> · <a href="https://kineticgain.com/">Kinetic Gain LLC</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
