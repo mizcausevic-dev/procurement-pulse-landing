@@ -573,3 +573,53 @@ h2 {
 .foot-col li { margin-bottom: 0.3rem; }
 .foot-col a { color: var(--slate-600); }
 .foot-col a:hover { color: var(--pulse-emerald-700); }
+
+/* === Suite dark theme (house look) === */
+html, body { color: #e2e8f0; background: #070b16; }
+a { color: var(--pulse-emerald-400); }
+a:hover { color: var(--pulse-emerald-300); }
+.accent, .accent-text { color: var(--pulse-emerald-400); }
+code { background: var(--slate-800); color: var(--slate-200); }
+
+.nav { background: rgba(7, 11, 22, 0.85); border-bottom-color: var(--slate-800); }
+.brand { color: #f8fafc; }
+.brand-mark { background: var(--slate-800); color: var(--pulse-emerald-400); }
+.nav-links a { color: var(--slate-400); }
+.nav-links a:hover { color: #f8fafc; }
+
+.hero { background: radial-gradient(circle at 80% 0%, rgba(16, 185, 129, 0.10), transparent 60%), linear-gradient(180deg, #070b16 0%, #0b1326 100%); border-bottom-color: var(--slate-800); }
+.pill { color: var(--pulse-emerald-300); border-color: rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.10); }
+.hero h1 { color: #f8fafc; }
+.lede { color: var(--slate-400); }
+.btn-secondary { background: var(--slate-900); color: var(--slate-200); border-color: var(--slate-700); }
+.btn-secondary:hover { background: var(--slate-800); color: #fff; }
+
+.block-tinted { background: #0b1120; }
+h2 { color: #f8fafc; }
+.prose { color: var(--slate-400); }
+
+.card { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); }
+.card h3 { color: #f8fafc; }
+.card p { color: var(--slate-400); }
+
+.numbered li { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); color: var(--slate-300); }
+
+.preview-card { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); }
+.preview-card-header h3 { color: #f8fafc; }
+.preview-tag { background: rgba(148, 163, 184, 0.08); color: var(--slate-400); border-color: var(--slate-700); }
+.preview-caption { color: var(--slate-400); }
+.bar-label { color: var(--slate-300); }
+.bar-track { background: var(--slate-800); }
+.donut { background: conic-gradient(var(--pulse-emerald-500) 0deg 83deg, var(--slate-700) 83deg 360deg); }
+.donut::after { background: #0f172a; }
+.donut-num { color: var(--pulse-emerald-400); }
+.donut-sub { color: var(--slate-400); }
+.donut-legend { color: var(--slate-300); }
+.trend-axes { color: var(--slate-400); }
+
+.foot { background: #070b16; border-top-color: var(--slate-800); }
+.foot-inner { color: var(--slate-400); }
+.foot-col strong { color: #f8fafc; }
+.foot-col a { color: var(--slate-400); }
+.foot-col a:hover { color: var(--pulse-emerald-400); }
+/* .metrics-strip + .cta-strip already dark — left as-is */
