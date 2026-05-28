@@ -135,7 +135,7 @@
           <div class="drift-card"><div class="d-num">0.24%</div><div class="d-lab">aggregate rate (reported)</div></div>
           <div class="drift-card"><div class="d-num dim">0.12%</div><div class="d-lab">aggregate rate (honest)</div></div>
           <div class="drift-card"><div class="d-num">100</div><div class="d-lab">kineticgain.com score</div></div>
-          <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">ed25519-verified documents</div></div>
+          <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">ed25519-verified at publish time</div></div>
         </div>
 
         <div class="fp-block">
@@ -146,14 +146,21 @@
           a 404 page-context payload as <code>application/json</code> for any <code>/.well-known/*</code> path. The
           response is structurally valid JSON, but its content is
           <code>{"componentChunkName":"component---src-pages-404-tsx",...}</code> — the SPA's internal page-rendering
-          context. The current probe discriminator accepts any 200 + valid JSON; it doesn't yet require the response
-          to satisfy the specific Suite spec's shape (e.g., an <code>aeo.json</code> must declare an
+          context. The probe discriminator at publish time accepted any 200 + valid JSON; it didn't yet require the
+          response to satisfy the specific Suite spec's shape (e.g., an <code>aeo.json</code> must declare an
           <code>aeo</code> object, not a Gatsby <code>componentChunkName</code>).</p>
           <p style="margin:0;">The honest finding is <strong>still one real publisher</strong> (<code>kineticgain.com</code>).
-          The fix is a <em>per-spec discriminator</em> shipping in <code>procurement-pulse-engine</code> before
-          Issue #5: each spec contributes a small JSON-schema fragment; a 200 only counts if the body matches.
           The false positive is in the published <code>data.json</code> intentionally — Pulse readers should be
           able to see the same evidence the instrument did, including its calibration gaps.</p>
+        </div>
+
+        <div class="callout" style="border-left-color: var(--pulse-emerald-500);">
+          <strong>Engine v0.4 update — 2026-05-28 (same day as publish).</strong> Both Issue #4 follow-ups have already landed in <code>procurement-pulse-engine</code> on <code>main</code>:
+          <ul style="margin:0.6rem 0 0; padding-left: 1.2rem;">
+            <li><strong>Per-spec discriminator shipped</strong> (<a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/commit/5892d88" target="_blank" rel="noreferrer">commit <code>5892d88</code></a>). All eleven Suite paths now check a meaningful <code>*_version</code> field (e.g. <code>agent_card_version</code>, <code>incident_card_version</code>, <code>decision_card_version</code>). Re-probed live: <code>kineticgain.com</code> still 100/100; <code>corporate.charter.com</code> dropped <strong>82 → 0</strong>. The Gatsby SPA catchall no longer fools the instrument. All 15 engine tests pass.</li>
+            <li><strong>kineticgain.com flipped to verified</strong>. All eleven dogfooded <code>/.well-known/</code> docs are now ed25519-signed against a published public key at <a href="https://kineticgain.com/.well-known/pulse-signing.json" target="_blank" rel="noreferrer"><code>kineticgain.com/.well-known/pulse-signing.json</code></a>. Engine probe now reports <code>{ verified: 11, unsigned: 0, invalid: 0 }</code> — the first <em>verified</em> row in any Pulse measurement, completing the Issue #1 load-bearing commitment about signature verification.</li>
+          </ul>
+          <p style="margin:0.8rem 0 0;">Issue #5 (the first true quarterly delta in August 2026) inherits both fixes by default. The numbers above remain as Issue #4 published them; this note is an additive editorial transparency layer, not a rewrite.</p>
         </div>
       </div>
     </section>
