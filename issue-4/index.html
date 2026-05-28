@@ -74,6 +74,7 @@
         <a href="/issue-1/">Issue #1</a>
         <a href="/issue-2/">Issue #2</a>
         <a href="/issue-3/">Issue #3</a>
+        <a href="/baseline/">Baseline</a>
         <a href="/#methodology">Methodology</a>
         <a class="cta" href="/#subscribe">Subscribe ↓</a>
       </nav>
@@ -160,7 +161,7 @@
             <li><strong>Per-spec discriminator shipped</strong> (<a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/commit/5892d88" target="_blank" rel="noreferrer">commit <code>5892d88</code></a>). All eleven Suite paths now check a meaningful <code>*_version</code> field (e.g. <code>agent_card_version</code>, <code>incident_card_version</code>, <code>decision_card_version</code>). Re-probed live: <code>kineticgain.com</code> still 100/100; <code>corporate.charter.com</code> dropped <strong>82 → 0</strong>. The Gatsby SPA catchall no longer fools the instrument. All 15 engine tests pass.</li>
             <li><strong>kineticgain.com flipped to verified</strong>. All eleven dogfooded <code>/.well-known/</code> docs are now ed25519-signed against a published public key at <a href="https://kineticgain.com/.well-known/pulse-signing.json" target="_blank" rel="noreferrer"><code>kineticgain.com/.well-known/pulse-signing.json</code></a>. Engine probe now reports <code>{ verified: 11, unsigned: 0, invalid: 0 }</code> — the first <em>verified</em> row in any Pulse measurement, completing the Issue #1 load-bearing commitment about signature verification.</li>
           </ul>
-          <p style="margin:0.8rem 0 0;">Issue #5 (the first true quarterly delta in August 2026) inherits both fixes by default. The numbers above remain as Issue #4 published them; this note is an additive editorial transparency layer, not a rewrite.</p>
+          <p style="margin:0.8rem 0 0;">Issue #5 (the first true quarterly delta in August 2026) inherits both fixes by default. The numbers above remain as Issue #4 published them; this note is an additive editorial transparency layer, not a rewrite. The full locked-in calibration is published at <a href="/baseline/">/baseline/</a> as a between-issues note.</p>
         </div>
       </div>
     </section>

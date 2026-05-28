@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Procurement Pulse · The Verified Baseline — between Issue #4 and Issue #5</title>
+  <meta name="description" content="A between-issues note locking in the v0.4 engine baseline: 941-domain universe, KG verified=11/11, per-spec discriminator eliminates SPA catch-all false positives. The instrument is calibrated for the August 2026 quarterly delta (Issue #5)." />
+  <meta name="theme-color" content="#070b16" />
+  <link rel="canonical" href="https://pulse.kineticgain.com/baseline/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Verified Baseline — Pulse engine v0.4 + KG verified=11/11" />
+  <meta property="og:description" content="Between Issue #4 and Issue #5. The instrument is now calibrated: per-spec discriminator landed, dogfooded docs signed and verified, universe at 941 domains. The August quarterly delta has something to measure against." />
+  <meta property="og:url" content="https://pulse.kineticgain.com/baseline/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Verified Baseline — Pulse engine v0.4 + KG verified=11/11" />
+  <meta name="twitter:description" content="941-domain universe, 11/11 ed25519-verified, SPA catch-alls correctly score 0. The calibrated baseline against which Issue #5 (August 2026) reports the first quarterly delta." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .big-stat {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, var(--pulse-emerald-900) 100%);
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+    .big-stat .num {
+      font-family: var(--font-mono);
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .big-stat .cap { color: var(--pulse-emerald-300); font-size: 1.05rem; margin-top: 0.75rem; }
+    .breadcrumb { font-size: 0.85rem; color: var(--slate-500); margin-bottom: 0.5rem; }
+    .breadcrumb a { color: var(--pulse-emerald-700); }
+    .callout { border-left: 3px solid var(--pulse-emerald-500); background: #ecfdf5; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem; color: var(--slate-700); }
+    .callout.warn { border-left-color: var(--slate-400); background: var(--slate-100); }
+    .drift-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .drift-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .drift-card .d-num { font-family: var(--font-mono); font-size: 1.9rem; font-weight: 700; color: var(--pulse-emerald-700); line-height: 1; }
+    .drift-card .d-num.dim { color: var(--slate-500); }
+    .drift-card .d-lab { color: var(--slate-500); font-size: 0.8rem; margin-top: 0.4rem; }
+
+    .verified-block { background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
+    .verified-block code { background: rgba(16, 185, 129, 0.12); padding: 1px 6px; border-radius: 4px; }
+    .verified-block .lbl { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pulse-emerald-500); margin-bottom: 0.4rem; }
+
+    .spec-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.92rem; }
+    .spec-table th, .spec-table td { border-bottom: 1px solid var(--slate-200); padding: 0.55rem 0.75rem; text-align: left; }
+    .spec-table th { color: var(--slate-500); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .spec-table code { font-size: 0.85rem; }
+
+    /* dark theme overrides */
+    .callout { background: rgba(16, 185, 129, 0.08); color: var(--slate-300); }
+    .callout.warn { background: rgba(148, 163, 184, 0.08); border-left-color: var(--slate-500); }
+    .breadcrumb { color: var(--slate-400); }
+    .breadcrumb a { color: var(--pulse-emerald-400); }
+    .drift-card { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); }
+    .drift-card .d-num { color: var(--pulse-emerald-400); }
+    .drift-card .d-num.dim { color: var(--slate-400); }
+    .drift-card .d-lab { color: var(--slate-400); }
+    .verified-block { color: var(--slate-300); }
+    .spec-table th, .spec-table td { border-bottom-color: var(--slate-800); }
+    .spec-table th { color: var(--slate-400); }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="brand" aria-label="AI Procurement Pulse home">
+        <span class="brand-mark" aria-hidden="true">〰️</span>
+        <span class="brand-text">
+          <strong>AI Procurement Pulse</strong>
+          <small>Kinetic Gain Research · Quarterly</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/">Issue #0</a>
+        <a href="/issue-1/">Issue #1</a>
+        <a href="/issue-2/">Issue #2</a>
+        <a href="/issue-3/">Issue #3</a>
+        <a href="/issue-4/">Issue #4</a>
+        <a href="/#methodology">Methodology</a>
+        <a class="cta" href="/#subscribe">Subscribe ↓</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="breadcrumb"><a href="/">AI Procurement Pulse</a> → <a href="/issue-4/">Issue #4</a> → Baseline</p>
+        <span class="pill mono">BETWEEN ISSUES · MAY 2026 · THE VERIFIED BASELINE</span>
+        <h1>The instrument is now <span class="accent">calibrated and verified.</span></h1>
+        <p class="lede">
+          Three things have landed since Issue #4 shipped. The engine now carries a
+          <strong>per-spec discriminator</strong> that retires the Gatsby-SPA-catchall false-positive class.
+          The eleven dogfooded <code>kineticgain.com</code> documents are now <strong>ed25519-signed and verified</strong>
+          — the first <code>verified</code> row in any Pulse measurement. And the universe has grown to
+          <strong>941 domains</strong>, including all forty-seven <code>.kineticgain.com</code> operator surfaces
+          that the portfolio actually deploys. This page is the locked-in baseline against which
+          <strong>Issue #5 (August 2026)</strong> reports the first true quarterly delta.
+        </p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner">
+        <h2>The baseline numbers, locked in</h2>
+        <p class="prose">
+          A full v0.4 crawl on the 899-domain universe at hardening close. The raw is committed to
+          <code>procurement-pulse-engine/data/issue-4-v04-full.json</code>. The numbers below are not
+          a re-publish of Issue #4 — they are the calibrated instrument's current reading, with the
+          discriminator and signing fixes both applied.
+        </p>
+        <div class="drift-grid">
+          <div class="drift-card"><div class="d-num">941</div><div class="d-lab">domains in universe (now)</div></div>
+          <div class="drift-card"><div class="d-num">1</div><div class="d-lab">domains publishing (real)</div></div>
+          <div class="drift-card"><div class="d-num">0.11%</div><div class="d-lab">aggregate publication rate</div></div>
+          <div class="drift-card"><div class="d-num">11 / 11</div><div class="d-lab">KG docs verified (ed25519)</div></div>
+          <div class="drift-card"><div class="d-num">100</div><div class="d-lab">kineticgain.com score</div></div>
+          <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">false positives (was: 1 in Issue #4)</div></div>
+        </div>
+        <div class="callout">
+          <strong>Why the universe count moved.</strong> Issue #4 published with 834 domains. The current universe is at
+          941 — the difference is editorial sourcing work, not a re-crawl: Forbes AI 50 net-new (28),
+          hand-picked HealthTech AI (18), hand-picked K-12 EdTech (12), and a backfill of every
+          <code>.kineticgain.com</code> operator-surface CNAME the Kinetic Gain portfolio deploys (47).
+          The "every deploy enters universe" rule is now a v2 strategy invariant — measured properties grow
+          with the portfolio, not behind it.
+        </div>
+      </div>
+    </section>
+
+    <section class="block block-tinted">
+      <div class="block-inner">
+        <h2>The discriminator — what the false positive looks like, after the fix</h2>
+        <p class="prose">
+          Issue #4 flagged <code>corporate.charter.com</code> as a 82/100 publisher. It wasn't — the site is
+          built with Gatsby, and its catch-all returns the 404 page-context payload as <code>application/json</code>
+          for any <code>/.well-known/*</code> path. Engine v0.4 (commit
+          <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/commit/5892d88" target="_blank" rel="noreferrer"><code>5892d88</code></a>)
+          now requires each of the eleven Suite paths to carry its canonical <code>*_version</code> field —
+          the minimal Suite-spec shape, not just "valid JSON". Re-probed live, <code>corporate.charter.com</code>
+          drops 82 → 0; <code>kineticgain.com</code> holds 100/100. The instrument now distinguishes a
+          Suite document from a SPA's internal page-rendering context.
+        </p>
+
+        <table class="spec-table">
+          <thead>
+            <tr><th>Spec</th><th>Path</th><th>Discriminator (v0.4)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>AEO</td><td><code>/.well-known/aeo.json</code></td><td><code>aeo_version</code></td></tr>
+            <tr><td>Agent Card</td><td><code>/.well-known/agents/index.json</code></td><td><code>agent_card_version</code></td></tr>
+            <tr><td>Prompt Provenance</td><td><code>/.well-known/prompts/index.json</code></td><td><code>provenance_version</code></td></tr>
+            <tr><td>Evidence Bundle</td><td><code>/.well-known/evidence/index.json</code></td><td><code>evidence_version</code></td></tr>
+            <tr><td>MCP Tool Card</td><td><code>/.well-known/tool-cards/index.json</code></td><td><code>tool_card_version</code></td></tr>
+            <tr><td>Tutor Card</td><td><code>/.well-known/tutor-cards/index.json</code></td><td><code>tutor_card_version</code></td></tr>
+            <tr><td>Student-AI Disclosure</td><td><code>/.well-known/student-ai-disclosure.json</code></td><td><code>disclosure_version</code></td></tr>
+            <tr><td>Classroom AUP</td><td><code>/.well-known/classroom-aup.json</code></td><td><code>aup_version</code></td></tr>
+            <tr><td>Clinical AI Card</td><td><code>/.well-known/clinical-ai-cards/index.json</code></td><td><code>clinical_ai_card_version</code></td></tr>
+            <tr><td>Incident Card</td><td><code>/.well-known/incident-cards/index.json</code></td><td><code>incident_card_version</code></td></tr>
+            <tr><td>Decision Card</td><td><code>/.well-known/decision-cards/index.json</code></td><td><code>decision_card_version</code></td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout warn">
+          <strong>What this catches.</strong> Gatsby/Next.js/CRA catch-alls, generic 404-page JSON, CDN error
+          pages dressed as <code>application/json</code>, and any "valid JSON of the wrong shape" response.
+          What this still doesn't catch: a vendor that hand-crafts a JSON file with the right discriminator
+          field but otherwise empty payload. That would be intentional misrepresentation, not a SPA artifact —
+          a different problem, and the publishable evidence already includes the full document for inspection.
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner">
+        <h2>The first verified row</h2>
+        <p class="prose">
+          The Issue #1 commitment around ed25519 signature verification has now closed.
+          <code>kineticgain.com</code>'s eleven dogfooded <code>/.well-known/</code> documents are signed
+          against a public key published at
+          <a href="https://kineticgain.com/.well-known/pulse-signing.json" target="_blank" rel="noreferrer"><code>kineticgain.com/.well-known/pulse-signing.json</code></a>.
+          The engine probe now reports <code>{ verified: 11, unsigned: 0, invalid: 0 }</code> on the dogfood row —
+          the first time any row in any Pulse measurement has carried a verified signature.
+        </p>
+
+        <div class="verified-block">
+          <div class="lbl">Verified · kineticgain.com</div>
+          <p style="margin:0 0 0.6rem;">All eleven Suite documents under <code>kineticgain.com/.well-known/</code>
+          are signed with the same ed25519 keypair. The signature covers the canonical serialization of each
+          document with the <code>signature</code> block recursively removed and remaining keys sorted.</p>
+          <p style="margin:0;">By default the engine trusts the embedded <code>public_key</code> (tamper-evident).
+          With <code>--verify-key-fetch</code> it instead fetches the key from <code>signing_key_url</code>
+          (provenance). Both pass on the dogfood row. The probe pattern mirrors
+          <a href="https://github.com/mizcausevic-dev/hash-attestation-rs" target="_blank" rel="noreferrer"><code>hash-attestation-rs</code></a>.</p>
+        </div>
+
+        <p class="prose" style="margin-top: 1.25rem;">
+          For any future vendor that signs their Suite docs and publishes a key, the engine will roll the
+          verification state up into <code>signatures.verifiedRate</code> on the issue dataset — the August
+          read will report this as a leading indicator separately from the publication rate.
+        </p>
+      </div>
+    </section>
+
+    <section class="block block-tinted">
+      <div class="block-inner" id="issue-5">
+        <h2>What Issue #5 (August 2026) reports against</h2>
+        <p class="prose">
+          The August quarterly delta is the first time the Pulse runs against a calibrated instrument.
+          Issue #1 was the zero-baseline calibration; Issues #2 and #3 expanded and stress-tested it;
+          Issue #4 published the first universe-scale finding alongside the false-positive that shaped
+          the v0.4 fix. Issue #5 has nothing left to calibrate — its only job is to measure the field's
+          movement (or lack of it) across three months of buyer pressure and vendor reaction.
+        </p>
+        <ul class="prose">
+          <li><strong>Same universe, recrawled.</strong> No editorial pivots between now and August.
+            Numbers move because vendors move, not because the lens did.</li>
+          <li><strong>The publication rate</strong> — currently <code>1 / 941 (0.11%)</code> — is the baseline.
+            Anything above it is news.</li>
+          <li><strong>The verification rate</strong> is reported separately. If even one new domain joins
+            <code>kineticgain.com</code> in the <code>verified</code> column, that's a structural shift, not noise.</li>
+          <li><strong>The drift artifact</strong> (<code>data/issue-5-drift.json</code>) will surface every
+            per-domain change: newly publishing, stopped publishing, score and per-spec changes. Reproducible,
+            not editorial.</li>
+        </ul>
+        <div class="hero-cta" style="margin-top:2rem;">
+          <a class="btn btn-primary" href="/#subscribe">Get Issue #5 by email</a>
+          <a class="btn btn-secondary" href="https://github.com/mizcausevic-dev/procurement-pulse-engine" target="_blank" rel="noreferrer">Reproduce the v0.4 baseline</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner">
+        <h2>Pre-registration — the read-locked plan for August</h2>
+        <p class="prose">
+          To keep the instrument honest, the August read is pre-registered here, not adjusted after the fact:
+        </p>
+        <ul class="prose">
+          <li><strong>Crawl date:</strong> the first weekday on or after 2026-08-15.</li>
+          <li><strong>Universe:</strong> whatever <code>universe.csv</code> contains at crawl time on the
+            <code>main</code> branch of <code>procurement-pulse-engine</code>. The "every deploy enters
+            universe" rule keeps this honest — surfaces are added when they ship, not chosen to flatter the
+            numbers.</li>
+          <li><strong>Engine:</strong> v0.4 or whatever <code>main</code> carries — any further engine
+            changes between now and August will be disclosed in the issue itself, alongside the v0.4 baseline
+            for comparison.</li>
+          <li><strong>Drift report:</strong> generated against <code>data/issue-4-v04-full.json</code>
+            (this baseline). The drift JSON ships in the issue folder.</li>
+        </ul>
+        <div class="callout">
+          <strong>Why pre-register?</strong> A buyer-readable governance instrument loses its credibility
+          the first time it's seen to move its goalposts mid-quarter. The Pulse is a public-edition
+          measurement — there is no internal version. What ships in August is exactly what was promised in May.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <div class="foot-col">
+        <strong>AI Procurement Pulse · The Verified Baseline</strong>
+        <p>Between Issue #4 (May 2026) and Issue #5 (August 2026). A Kinetic Gain Research publication. Free public edition under CC BY 4.0.</p>
+      </div>
+      <div class="foot-col">
+        <strong>Reproduce it</strong>
+        <ul>
+          <li><a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/issue-4-v04-full.json">issue-4-v04-full.json</a> — the v0.4 baseline aggregate</li>
+          <li><a href="https://github.com/mizcausevic-dev/procurement-pulse-engine">procurement-pulse-engine</a> — the crawler</li>
+          <li><a href="https://github.com/mizcausevic-dev/well-known-probe-js">well-known-probe-js</a> — the probe core</li>
+          <li><a href="https://kineticgain.com/.well-known/pulse-signing.json">pulse-signing.json</a> — the dogfood signing key</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <strong>Contact</strong>
+        <p><a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> · <a href="https://kineticgain.com/">Kinetic Gain LLC</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
