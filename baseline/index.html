@@ -121,20 +121,29 @@
           discriminator and signing fixes both applied.
         </p>
         <div class="drift-grid">
-          <div class="drift-card"><div class="d-num">941</div><div class="d-lab">domains in universe (now)</div></div>
+          <div class="drift-card"><div class="d-num">1,007</div><div class="d-lab">domains in universe (now)</div></div>
           <div class="drift-card"><div class="d-num">1</div><div class="d-lab">domains publishing (real)</div></div>
-          <div class="drift-card"><div class="d-num">0.11%</div><div class="d-lab">aggregate publication rate</div></div>
+          <div class="drift-card"><div class="d-num">0.10%</div><div class="d-lab">aggregate publication rate</div></div>
           <div class="drift-card"><div class="d-num">11 / 11</div><div class="d-lab">KG docs verified (ed25519)</div></div>
           <div class="drift-card"><div class="d-num">100</div><div class="d-lab">kineticgain.com score</div></div>
           <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">false positives (was: 1 in Issue #4)</div></div>
         </div>
         <div class="callout">
           <strong>Why the universe count moved.</strong> Issue #4 published with 834 domains. The current universe is at
-          941 — the difference is editorial sourcing work, not a re-crawl: Forbes AI 50 net-new (28),
-          hand-picked HealthTech AI (18), hand-picked K-12 EdTech (12), and a backfill of every
-          <code>.kineticgain.com</code> operator-surface CNAME the Kinetic Gain portfolio deploys (47).
-          The "every deploy enters universe" rule is now a v2 strategy invariant — measured properties grow
-          with the portfolio, not behind it.
+          <strong>1,007 across 38 verticals</strong> — the difference is editorial sourcing work, not a re-crawl: Forbes AI 50
+          net-new (28), hand-picked HealthTech AI (18), hand-picked K-12 EdTech (12), every <code>.kineticgain.com</code>
+          operator-surface CNAME the portfolio deploys (49), and a hand-picked CISO procurement pack (64 domains across
+          AI security, GRC, vendor risk, DevSecOps, IAM, OT/IoT, SecOps, MLOps). The "every deploy enters universe" rule
+          is now a v2 strategy invariant — measured properties grow with the portfolio, not behind it.
+        </div>
+        <div class="callout warn">
+          <strong>Two baseline artifacts, two purposes.</strong> The <strong>locked-in baseline</strong> for the
+          Issue #5 drift report is <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/issue-4-v04-full.json" target="_blank" rel="noreferrer"><code>data/issue-4-v04-full.json</code></a>
+          (899 domains, same publisher set). The <strong>latest snapshot</strong> at
+          <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/baseline-2026-05-28.json" target="_blank" rel="noreferrer"><code>data/baseline-2026-05-28.json</code></a>
+          (1,007 domains) documents that adding ~108 net-new domains to the universe does not move the headline.
+          August 2026 measures Issue #5 against the locked baseline; this snapshot is the falsifiable proof
+          that the universe expansion is editorial sourcing, not numerator manipulation.
         </div>
       </div>
     </section>
@@ -226,7 +235,8 @@
         <ul class="prose">
           <li><strong>Same universe, recrawled.</strong> No editorial pivots between now and August.
             Numbers move because vendors move, not because the lens did.</li>
-          <li><strong>The publication rate</strong> — currently <code>1 / 941 (0.11%)</code> — is the baseline.
+          <li><strong>The publication rate</strong> — locked at <code>1 / 899 (0.11%)</code> per the pre-registration,
+            <code>1 / 1,007 (0.10%)</code> on the latest snapshot — is the baseline.
             Anything above it is news.</li>
           <li><strong>The verification rate</strong> is reported separately. If even one new domain joins
             <code>kineticgain.com</code> in the <code>verified</code> column, that's a structural shift, not noise.</li>
