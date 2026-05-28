@@ -20,6 +20,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "AI Procurement Pulse — The Verified v0.4 Baseline",
+    "alternateName": "Pulse v0.4 Baseline (pre-registered for Issue #5, August 2026)",
+    "description": "Between-issues calibration baseline for the AI Procurement Pulse quarterly disclosure index. Engine v0.4 carries a per-spec discriminator (retires Gatsby SPA-catchall false positives). KG dogfooded documents are ed25519-signed and verified — the first verified row in any Pulse measurement. Universe at 1,007 domains across 38 verticals (latest snapshot, 2026-05-28); the locked pre-registered baseline against which Issue #5 reports is the 899-domain crawl in issue-4-v04-full.json.",
+    "url": "https://pulse.kineticgain.com/baseline/",
+    "datePublished": "2026-05-28",
+    "dateModified": "2026-05-28",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+      "@type": "ProfessionalService",
+      "name": "Kinetic Gain LLC",
+      "url": "https://kineticgain.com/"
+    },
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/issue-4-v04-full.json",
+        "name": "Locked pre-registered baseline (899 domains)"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/baseline-2026-05-28.json",
+        "name": "Latest snapshot (1,007 domains across 38 verticals)"
+      }
+    ],
+    "variableMeasured": [
+      "domainsPublishingAny",
+      "publicationRate",
+      "avgScore",
+      "signatures.verifiedDocs",
+      "signatures.foundDocs",
+      "leaderboard"
+    ],
+    "measurementTechnique": "Bounded-concurrency HTTPS GET probe of eleven /.well-known/ paths per domain, with per-spec canonical *_version field discrimination. ed25519 signature verification against embedded public_key (tamper-evident) or signing_key_url fetch (provenance).",
+    "isAccessibleForFree": true,
+    "keywords": ["AI governance", "AI procurement", "well-known", "AEO Protocol", "Agent Card", "Decision Card", "ed25519", "Kinetic Gain Protocol Suite"]
+  }
+  </script>
+
   <link rel="stylesheet" href="/style.css" />
   <style>
     .big-stat {
