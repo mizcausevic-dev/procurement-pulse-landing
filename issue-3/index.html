@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Procurement Pulse · Issue #3 — Three-Day Drift Soak</title>
+  <meta name="description" content="Issue #3 of the AI Procurement Pulse. Three days after Issue #2, the same 350-vendor universe is re-crawled. Zero drift. The instrument is stable; the market is stable; the publisher count holds at one. Quarterly delta begins August 2026." />
+  <meta name="theme-color" content="#070b16" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="AI Procurement Pulse · Issue #3 — Three-Day Drift Soak" />
+  <meta property="og:description" content="Three days. 350 domains. Zero drift. Calibration verified; the next true quarterly delta begins August 2026." />
+  <meta property="og:url" content="https://pulse.kineticgain.com/issue-3/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .big-stat {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, var(--pulse-emerald-900) 100%);
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+    .big-stat .num {
+      font-family: var(--font-mono);
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .big-stat .cap { color: var(--pulse-emerald-300); font-size: 1.05rem; margin-top: 0.75rem; }
+    .breadcrumb { font-size: 0.85rem; color: var(--slate-500); margin-bottom: 0.5rem; }
+    .breadcrumb a { color: var(--pulse-emerald-700); }
+    .callout { border-left: 3px solid var(--pulse-emerald-500); background: #ecfdf5; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin-top: 1.5rem; color: var(--slate-700); }
+    .callout.warn { border-left-color: var(--slate-400); background: var(--slate-100); }
+    .drift-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .drift-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .drift-card .d-num { font-family: var(--font-mono); font-size: 1.9rem; font-weight: 700; color: var(--pulse-emerald-700); line-height: 1; }
+    .drift-card .d-num.dim { color: var(--slate-500); }
+    .drift-card .d-lab { color: var(--slate-500); font-size: 0.8rem; margin-top: 0.4rem; }
+
+    /* dark theme overrides */
+    .callout { background: rgba(16, 185, 129, 0.08); color: var(--slate-300); }
+    .callout.warn { background: rgba(148, 163, 184, 0.08); border-left-color: var(--slate-500); }
+    .breadcrumb { color: var(--slate-400); }
+    .breadcrumb a { color: var(--pulse-emerald-400); }
+    .drift-card { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); }
+    .drift-card .d-num { color: var(--pulse-emerald-400); }
+    .drift-card .d-num.dim { color: var(--slate-400); }
+    .drift-card .d-lab { color: var(--slate-400); }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="brand" aria-label="AI Procurement Pulse home">
+        <span class="brand-mark" aria-hidden="true">〰️</span>
+        <span class="brand-text">
+          <strong>AI Procurement Pulse</strong>
+          <small>Kinetic Gain Research · Quarterly</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/">Issue #0</a>
+        <a href="/issue-1/">Issue #1</a>
+        <a href="/issue-2/">Issue #2</a>
+        <a href="/#methodology">Methodology</a>
+        <a class="cta" href="/#subscribe">Subscribe ↓</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="breadcrumb"><a href="/">AI Procurement Pulse</a> → <a href="/issue-2/">Issue #2</a> → Issue #3</p>
+        <span class="pill mono">ISSUE #3 · MAY 2026 · DRIFT SOAK</span>
+        <h1>Three days. 350 domains. <span class="accent">Zero drift.</span></h1>
+        <p class="lede">
+          Issue #3 is not a quarterly update — it's a <strong>three-day soak test</strong> of the same
+          <strong>350-vendor universe</strong> behind Issue #2. The crawl re-runs; the publisher count holds at one;
+          every per-vertical rate matches to the basis point. The instrument is calibrated, the
+          baseline is durable, and the first true quarterly delta begins
+          <a href="#roadmap">August 2026</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner">
+        <h2>The drift summary</h2>
+        <p class="prose">
+          Same universe, same probe, same scoring — three days later. <strong>0 domains newly publishing.</strong>
+          <strong>0 domains stopped publishing.</strong> <strong>0 score changes.</strong> The rate Issue #2 reported
+          (0.29% headline, 25% Reference vertical, 0% everywhere else) is intact. This is the publishable evidence
+          that Issue #2's number wasn't a probe artifact.
+        </p>
+        <div class="drift-grid">
+          <div class="drift-card"><div class="d-num">0</div><div class="d-lab">universe Δ (domains added)</div></div>
+          <div class="drift-card"><div class="d-num">0</div><div class="d-lab">publishing-any Δ</div></div>
+          <div class="drift-card"><div class="d-num dim">0%</div><div class="d-lab">publication-rate Δ</div></div>
+          <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">avg-score Δ</div></div>
+          <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">newly publishing domains</div></div>
+          <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">domains that stopped</div></div>
+        </div>
+        <div class="callout">
+          <strong>Why measure drift on a 3-day window?</strong> The Pulse is designed to catch real adoption signal,
+          not stochastic probe noise. A short-interval re-crawl is the only way to separate the two before the quarterly
+          cadence hands you a single noisy number. Issue #3 is the calibration step — proof that Issue #4's quarterly
+          delta will report adoption, not measurement variance.
+        </div>
+      </div>
+    </section>
+
+    <section class="block block-tinted">
+      <div class="block-inner">
+        <h2>What hasn't changed</h2>
+        <div class="drift-grid">
+          <div class="drift-card"><div class="d-num">350</div><div class="d-lab">vendor domains in the universe</div></div>
+          <div class="drift-card"><div class="d-num">18</div><div class="d-lab">verticals tracked</div></div>
+          <div class="drift-card"><div class="d-num">1</div><div class="d-lab">domain publishing any Suite document</div></div>
+          <div class="drift-card"><div class="d-num">0.29%</div><div class="d-lab">aggregate publication rate</div></div>
+          <div class="drift-card"><div class="d-num">11</div><div class="d-lab">documents found (all kineticgain.com)</div></div>
+          <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">ed25519-verified documents</div></div>
+        </div>
+        <p class="prose" style="margin-top:1.5rem;">
+          The one publisher is still <code>kineticgain.com</code> — the author of the eleven specs, scoring 100/100,
+          first off the Zero Baseline. Every other vertical (AI Platform, EdTech, HealthTech, FinTech, Enterprise SaaS,
+          Data, Observability, Identity, Legal AI, CX/Support AI, Dev Tools, Marketing AI, HR AI, Retail, Government,
+          Insurance AI, Automotive / Robotics) still reads 0% — both at headline and per-spec level.
+        </p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-inner" id="roadmap">
+        <h2>What changes between now and Issue #4</h2>
+        <p class="prose">
+          Issue #4 (planned August 2026) is the <strong>first true quarterly delta</strong> — three months of buyer
+          pressure and vendor reaction compressed into one number. Between now and then:
+        </p>
+        <ul class="prose">
+          <li><strong>Sign the dogfooded documents.</strong> The eleven kineticgain.com files exist but read as
+            <code>unsigned</code> by the verifier shipped in Issue #2. Issue #4 ships them with ed25519 signatures
+            so the first <code>verified</code> row appears.</li>
+          <li><strong>Push the universe past 500 domains.</strong> The ~1,200-domain Fortune 500 + top-100 K-12 EdTech
+            + top-50 HealthTech AI target is the long arc. Issue #4 lands the next 150 toward it.</li>
+          <li><strong>Add a procurement-side cohort.</strong> Districts and enterprises that publish a
+            <a href="https://decisions.kineticgain.com/" target="_blank" rel="noreferrer">Procurement Decision Card</a>
+            become buyer-side counterparts to the vendor universe — and a leading indicator: when buyers cite specs,
+            vendors publish them.</li>
+        </ul>
+        <div class="hero-cta" style="margin-top:2rem;">
+          <a class="btn btn-primary" href="/#subscribe">Get Issue #4 by email</a>
+          <a class="btn btn-secondary" href="https://github.com/mizcausevic-dev/procurement-pulse-engine" target="_blank" rel="noreferrer">Reproduce this crawl</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <div class="foot-col">
+        <strong>AI Procurement Pulse · Issue #3</strong>
+        <p>Three-Day Drift Soak · May 2026. A Kinetic Gain Research publication. Free public edition under CC BY 4.0.</p>
+      </div>
+      <div class="foot-col">
+        <strong>Reproduce it</strong>
+        <ul>
+          <li><a href="data.json">issue-3/data.json</a> — the re-crawl dataset</li>
+          <li><a href="drift.json">issue-3/drift.json</a> — drift vs Issue #2</li>
+          <li><a href="https://github.com/mizcausevic-dev/procurement-pulse-engine">procurement-pulse-engine</a> — the crawler</li>
+          <li><a href="https://github.com/mizcausevic-dev/well-known-probe-js">well-known-probe-js</a> — the probe core</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <strong>Contact</strong>
+        <p><a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> · <a href="https://kineticgain.com/">Kinetic Gain LLC</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
