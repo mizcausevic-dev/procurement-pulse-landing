@@ -8,6 +8,12 @@
   <meta name="theme-color" content="#070b16" />
   <link rel="canonical" href="https://pulse.kineticgain.com/" />
 
+  <!-- Security headers — canonical source is .htaccess; <meta> tags are       -->
+  <!-- offline-mirror fallbacks. HSTS, X-Frame, X-Content-Type-Options,        -->
+  <!-- Permissions-Policy, COOP, CORP CANNOT be set via <meta>.                -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AI Procurement Pulse — the quarterly disclosure index" />
   <meta property="og:description" content="Cloudflare Radar for AI procurement. Quarterly published index of which vendors publicly disclose their AI governance posture via the Kinetic Gain Protocol Suite. Methodology, sample data, sign-up for Issue #1 (Q3 2026)." />
