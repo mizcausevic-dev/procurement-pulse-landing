@@ -4,17 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Procurement Pulse · The Verified Baseline — between Issue #4 and Issue #5</title>
-  <meta name="description" content="A between-issues note locking in the v0.4 engine baseline: 941-domain universe, KG verified=11/11, per-spec discriminator eliminates SPA catch-all false positives. The instrument is calibrated for the August 2026 quarterly delta (Issue #5)." />
+  <meta name="description" content="Between-issues note locking in the v0.4 engine baseline: 899-domain locked universe (pre-registered), 1,531-domain current universe (2026-06-01), KG verified=11/11, per-spec discriminator eliminates SPA catch-all false positives. Calibrated for the August 2026 quarterly delta (Issue #5)." />
   <meta name="theme-color" content="#070b16" />
   <link rel="canonical" href="https://pulse.kineticgain.com/baseline/" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="The Verified Baseline — Pulse engine v0.4 + KG verified=11/11" />
-  <meta property="og:description" content="Between Issue #4 and Issue #5. The instrument is now calibrated: per-spec discriminator landed, dogfooded docs signed and verified, universe at 941 domains. The August quarterly delta has something to measure against." />
+  <meta property="og:description" content="Between Issue #4 and Issue #5. The instrument is calibrated: per-spec discriminator landed, dogfooded docs signed and verified, universe at 1,531 domains (2026-06-01). The August quarterly delta has something to measure against." />
   <meta property="og:url" content="https://pulse.kineticgain.com/baseline/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Verified Baseline — Pulse engine v0.4 + KG verified=11/11" />
-  <meta name="twitter:description" content="941-domain universe, 11/11 ed25519-verified, SPA catch-alls correctly score 0. The calibrated baseline against which Issue #5 (August 2026) reports the first quarterly delta." />
+  <meta name="twitter:description" content="1,531-domain universe (2026-06-01), 11/11 ed25519-verified, SPA catch-alls correctly score 0. The calibrated baseline against which Issue #5 (August 2026) reports the first quarterly delta." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     "@type": "Dataset",
     "name": "AI Procurement Pulse — The Verified v0.4 Baseline",
     "alternateName": "Pulse v0.4 Baseline (pre-registered for Issue #5, August 2026)",
-    "description": "Between-issues calibration baseline for the AI Procurement Pulse quarterly disclosure index. Engine v0.4 carries a per-spec discriminator (retires Gatsby SPA-catchall false positives). KG dogfooded documents are ed25519-signed and verified — the first verified row in any Pulse measurement. Universe at 1,007 domains across 38 verticals (latest snapshot, 2026-05-28); the locked pre-registered baseline against which Issue #5 reports is the 899-domain crawl in issue-4-v04-full.json.",
+    "description": "Between-issues calibration baseline for the AI Procurement Pulse quarterly disclosure index. Engine v0.4 carries a per-spec discriminator (retires Gatsby SPA-catchall false positives). KG dogfooded documents are ed25519-signed and verified — the first verified row in any Pulse measurement. Universe at 1,531 domains as of 2026-06-01 (was 1,007 at the 2026-05-28 snapshot); the locked pre-registered baseline against which Issue #5 reports is the 899-domain crawl in issue-4-v04-full.json.",
     "url": "https://pulse.kineticgain.com/baseline/",
     "datePublished": "2026-05-28",
     "dateModified": "2026-05-28",
@@ -148,7 +148,7 @@
           <strong>per-spec discriminator</strong> that retires the Gatsby-SPA-catchall false-positive class.
           The eleven dogfooded <code>kineticgain.com</code> documents are now <strong>ed25519-signed and verified</strong>
           — the first <code>verified</code> row in any Pulse measurement. And the universe has grown to
-          <strong>941 domains</strong>, including all forty-seven <code>.kineticgain.com</code> operator surfaces
+          <strong>1,531 domains</strong> (as of 2026-06-01), including every <code>.kineticgain.com</code> operator surface
           that the portfolio actually deploys. This page is the locked-in baseline against which
           <strong>Issue #5 (August 2026)</strong> reports the first true quarterly delta.
         </p>
@@ -165,7 +165,7 @@
           discriminator and signing fixes both applied.
         </p>
         <div class="drift-grid">
-          <div class="drift-card"><div class="d-num">1,007</div><div class="d-lab">domains in universe (now)</div></div>
+          <div class="drift-card"><div class="d-num">1,531</div><div class="d-lab">domains in universe (now, 2026-06-01)</div></div>
           <div class="drift-card"><div class="d-num">1</div><div class="d-lab">domains publishing (real)</div></div>
           <div class="drift-card"><div class="d-num">0.10%</div><div class="d-lab">aggregate publication rate</div></div>
           <div class="drift-card"><div class="d-num">11 / 11</div><div class="d-lab">KG docs verified (ed25519)</div></div>
@@ -174,20 +174,24 @@
         </div>
         <div class="callout">
           <strong>Why the universe count moved.</strong> Issue #4 published with 834 domains. The current universe is at
-          <strong>1,007 across 38 verticals</strong> — the difference is editorial sourcing work, not a re-crawl: Forbes AI 50
-          net-new (28), hand-picked HealthTech AI (18), hand-picked K-12 EdTech (12), every <code>.kineticgain.com</code>
-          operator-surface CNAME the portfolio deploys (49), and a hand-picked CISO procurement pack (64 domains across
-          AI security, GRC, vendor risk, DevSecOps, IAM, OT/IoT, SecOps, MLOps). The "every deploy enters universe" rule
-          is now a v2 strategy invariant — measured properties grow with the portfolio, not behind it.
+          <strong>1,531 domains across 30+ verticals</strong> as of 2026-06-01 — the difference is editorial sourcing work,
+          not a re-crawl: Forbes AI 50 net-new (28), hand-picked HealthTech AI (18), hand-picked K-12 EdTech (12), every
+          <code>.kineticgain.com</code> operator-surface CNAME the portfolio deploys (now 60+), a CISO procurement pack
+          (64 domains across AI security, GRC, vendor risk, DevSecOps, IAM, OT/IoT, SecOps, MLOps), and the post-2026-05-28
+          additions: Climate/ESG · Supply Chain · FinOps · Observability · Identity (+18) plus DevOps/PlatformEng/ChaosEng
+          (+50). The "every deploy enters universe" rule is now a v2 strategy invariant — measured properties grow with
+          the portfolio, not behind it.
         </div>
         <div class="callout warn">
           <strong>Two baseline artifacts, two purposes.</strong> The <strong>locked-in baseline</strong> for the
           Issue #5 drift report is <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/issue-4-v04-full.json" target="_blank" rel="noreferrer"><code>data/issue-4-v04-full.json</code></a>
           (899 domains, same publisher set). The <strong>latest snapshot</strong> at
           <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/baseline-2026-05-28.json" target="_blank" rel="noreferrer"><code>data/baseline-2026-05-28.json</code></a>
-          (1,007 domains) documents that adding ~108 net-new domains to the universe does not move the headline.
-          August 2026 measures Issue #5 against the locked baseline; this snapshot is the falsifiable proof
-          that the universe expansion is editorial sourcing, not numerator manipulation.
+          (1,007 domains at snapshot time) documents that adding net-new domains does not move the headline. As of
+          2026-06-01 the universe is 1,531 — adding ~632 net-new domains since Issue #4 still leaves the publication
+          rate at <code>1 / 1,531 (0.07%)</code>, indistinguishable from the pre-registered rate. August 2026 measures
+          Issue #5 against the locked baseline; this is the falsifiable proof that universe expansion is editorial
+          sourcing, not numerator manipulation.
         </div>
       </div>
     </section>
@@ -280,7 +284,7 @@
           <li><strong>Same universe, recrawled.</strong> No editorial pivots between now and August.
             Numbers move because vendors move, not because the lens did.</li>
           <li><strong>The publication rate</strong> — locked at <code>1 / 899 (0.11%)</code> per the pre-registration,
-            <code>1 / 1,007 (0.10%)</code> on the latest snapshot — is the baseline.
+            <code>1 / 1,531 (0.07%)</code> on the current universe (2026-06-01) — is the baseline.
             Anything above it is news.</li>
           <li><strong>The verification rate</strong> is reported separately. If even one new domain joins
             <code>kineticgain.com</code> in the <code>verified</code> column, that's a structural shift, not noise.</li>
