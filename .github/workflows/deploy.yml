@@ -50,6 +50,10 @@ jobs:
             **/.gitignore
             **/.claude/**
 
+      - name: Sleep before retry (let FTP cap drain)
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 60
+
       - name: Retry FTP-Deploy if first attempt failed
         if: steps.deploy.outcome == 'failure'
         timeout-minutes: 5
