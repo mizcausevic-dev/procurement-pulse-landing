@@ -4,9 +4,19 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Hourly self-heal — if a push deploy gets blocked by Hostinger's IP
+  # reputation WAF (port 65002 timeout from flagged Azure runner IP), the
+  # next cron tick draws a different runner IP and retries. Same pattern
+  # as kinetic-gain-suite-landing.
+  schedule:
+    - cron: '37 * * * *'  # off the top of the hour to avoid GH cron herd
 
 permissions:
   contents: read
+
+concurrency:
+  group: pulse-landing-deploy
+  cancel-in-progress: true
 
 jobs:
   deploy:
