@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   deploy:
-    name: FTP-sync static site to pulse.kineticgain.com
+    name: SFTP-sync static site to pulse.kineticgain.com
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -24,60 +24,33 @@ jobs:
           echo "OK: site root verified"
           ls -lah
 
-      - name: FTP-Deploy to /pulse/ (first attempt)
-        id: deploy
-        timeout-minutes: 5
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        continue-on-error: true
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          protocol: ftps
-          port: 21
-          timeout: 60000
-          local-dir: ./
-          server-dir: /pulse/
-          dangerous-clean-slate: false
-          log-level: standard
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/.DS_Store
-            **/README.md
-            **/LICENSE
-            **/.gitignore
-            **/.claude/**
+      - name: Install SSH key + add known_host
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/kg_deploy
+          chmod 600 ~/.ssh/kg_deploy
+          HOST="${FTP_HOST#ftp://}"; HOST="${HOST#sftp://}"; HOST="${HOST%/}"
+          ssh-keyscan -p 65002 -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
 
-      - name: Sleep before retry (let FTP cap drain)
-        if: steps.deploy.outcome == 'failure'
-        run: sleep 60
-
-      - name: Retry FTP-Deploy if first attempt failed
-        if: steps.deploy.outcome == 'failure'
-        timeout-minutes: 5
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          protocol: ftps
-          port: 21
-          timeout: 90000
-          local-dir: ./
-          server-dir: /pulse/
-          dangerous-clean-slate: false
-          log-level: verbose
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/.DS_Store
-            **/README.md
-            **/LICENSE
-            **/.gitignore
-            **/.claude/**
+      - name: SFTP-Deploy via tar | ssh
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+        run: |
+          set -euo pipefail
+          HOST="${FTP_HOST#ftp://}"; HOST="${HOST#sftp://}"; HOST="${HOST%/}"
+          tar --exclude='.git' --exclude='.github' --exclude='node_modules' \
+              --exclude='CHANGELOG.md' --exclude='LICENSE' --exclude='README.md' \
+              --exclude='docs' --exclude='.DS_Store' --exclude='.gitignore' \
+              --exclude='.claude' -czf - . | \
+          ssh -i ~/.ssh/kg_deploy -o StrictHostKeyChecking=accept-new \
+              -o ConnectTimeout=30 -o ServerAliveInterval=15 -p 65002 \
+              "$FTP_USER@$HOST" \
+              'cd domains/kineticgain.com/public_html/pulse/ && tar -xzf - && echo DEPLOY_EXTRACTED'
 
       - name: Post-deploy verification
         run: |
