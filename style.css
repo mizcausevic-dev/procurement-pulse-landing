@@ -1,23 +1,39 @@
 :root {
-  --pulse-emerald-300: #6ee7b7;
-  --pulse-emerald-400: #34d399;
-  --pulse-emerald-500: #10b981;
-  --pulse-emerald-600: #059669;
-  --pulse-emerald-700: #047857;
-  --pulse-emerald-900: #064e3b;
+  /* ===== BERT dark-cyan palette (Kinetic Gain house standard) ===== */
+  --bg:      #0B0C10;
+  --panel:   #1F2833;
+  --panel2:  #161d26;
+  --text:    #C5C6C7;
+  --head:    #eaf6f5;
+  --muted:   #7d8a94;
+  --accent:  #66FCF1; /* cyan  */
+  --accent2: #45A29E; /* teal  */
+  --border:  #2b3a46;
 
-  --slate-50:  #f8fafc;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  --slate-800: #1e293b;
-  --slate-900: #0f172a;
-  --slate-950: #020617;
+  /* Legacy accent tokens remapped onto the cyan/teal ramp.
+     Dark teal (700/900) keeps white button text AA-legible. */
+  --pulse-emerald-300: #9df6f1;
+  --pulse-emerald-400: #66FCF1;
+  --pulse-emerald-500: #45A29E;
+  --pulse-emerald-600: #3a8a86;
+  --pulse-emerald-700: #2c6e6a;
+  --pulse-emerald-900: #123b38;
 
+  /* Legacy neutral tokens remapped onto BERT ground/panels.
+     Low numbers = light (reading text), high numbers = dark (panels/borders). */
+  --slate-50:  #eef3f3;
+  --slate-100: #161d26;
+  --slate-200: #C5C6C7;
+  --slate-300: #b7c0c5;
+  --slate-400: #8b959d;
+  --slate-500: #7d8a94;
+  --slate-600: #C5C6C7;
+  --slate-700: #2b3a46;
+  --slate-800: #1F2833;
+  --slate-900: #1F2833;
+  --slate-950: #0B0C10;
+
+  --font-head: "Space Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -49,6 +65,9 @@ code {
 .mono { font-family: var(--font-mono); letter-spacing: 0.01em; }
 .accent { color: var(--pulse-emerald-700); }
 .accent-text { color: var(--pulse-emerald-700); }
+
+/* Headings use Space Grotesk with an Inter fallback — never a serif. */
+h1, h2, h3, .brand-text strong { font-family: var(--font-head); }
 
 /* ============ Nav ============ */
 
@@ -116,10 +135,10 @@ code {
 
 .hero {
   background:
-    radial-gradient(circle at 80% 0%, rgba(16, 185, 129, 0.08), transparent 60%),
-    linear-gradient(180deg, #fff 0%, #ecfdf5 100%);
+    radial-gradient(circle at 80% 0%, rgba(102, 252, 241, 0.08), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--panel2) 100%);
   padding: 4.5rem 1.25rem 5rem;
-  border-bottom: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--border);
 }
 .hero-inner {
   max-width: 880px;
@@ -262,7 +281,7 @@ h2 {
 .card:hover {
   transform: translateY(-2px);
   border-color: var(--pulse-emerald-300);
-  box-shadow: 0 12px 24px -16px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 12px 24px -16px rgba(102, 252, 241, 0.25);
 }
 .card h3 {
   font-size: 1.05rem;
@@ -474,7 +493,7 @@ h2 {
 
 .cta-strip {
   background:
-    radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.15), transparent 50%),
+    radial-gradient(circle at 20% 30%, rgba(102, 252, 241, 0.12), transparent 50%),
     linear-gradient(135deg, var(--slate-900) 0%, var(--pulse-emerald-900) 100%);
   color: #fff;
   padding: 5rem 1.25rem;
@@ -485,8 +504,8 @@ h2 {
   margin: 0 auto;
 }
 .cta-strip .pill {
-  background: rgba(16, 185, 129, 0.2);
-  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(102, 252, 241, 0.15);
+  border-color: rgba(102, 252, 241, 0.4);
   color: var(--pulse-emerald-300);
 }
 .cta-strip h2 {
@@ -574,52 +593,54 @@ h2 {
 .foot-col a { color: var(--slate-600); }
 .foot-col a:hover { color: var(--pulse-emerald-700); }
 
-/* === Suite dark theme (house look) === */
-html, body { color: #e2e8f0; background: #070b16; }
+/* === Suite dark theme (BERT dark-cyan house look) === */
+html, body { color: var(--text); background: var(--bg); }
 a { color: var(--pulse-emerald-400); }
 a:hover { color: var(--pulse-emerald-300); }
 .accent, .accent-text { color: var(--pulse-emerald-400); }
 code { background: var(--slate-800); color: var(--slate-200); }
 
-.nav { background: rgba(7, 11, 22, 0.85); border-bottom-color: var(--slate-800); }
+.nav { background: rgba(11, 12, 16, 0.85); border-bottom-color: var(--border); }
 .brand { color: #f8fafc; }
 .brand-mark { background: var(--slate-800); color: var(--pulse-emerald-400); }
 .nav-links a { color: var(--slate-400); }
 .nav-links a:hover { color: #f8fafc; }
 
-.hero { background: radial-gradient(circle at 80% 0%, rgba(16, 185, 129, 0.10), transparent 60%), linear-gradient(180deg, #070b16 0%, #0b1326 100%); border-bottom-color: var(--slate-800); }
-.pill { color: var(--pulse-emerald-300); border-color: rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.10); }
-.hero h1 { color: #f8fafc; }
+.hero { background: radial-gradient(circle at 80% 0%, rgba(102, 252, 241, 0.08), transparent 60%), linear-gradient(180deg, var(--bg) 0%, var(--panel2) 100%); border-bottom-color: var(--border); }
+.pill { color: var(--accent); border-color: rgba(102, 252, 241, 0.35); background: rgba(102, 252, 241, 0.10); }
+.hero h1 { color: var(--head); }
 .lede { color: var(--slate-400); }
 .btn-secondary { background: var(--slate-900); color: var(--slate-200); border-color: var(--slate-700); }
 .btn-secondary:hover { background: var(--slate-800); color: #fff; }
 
-.block-tinted { background: #0b1120; }
-h2 { color: #f8fafc; }
+.block-tinted { background: var(--panel2); }
+h2 { color: var(--head); }
 .prose { color: var(--slate-400); }
 
-.card { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); }
-.card h3 { color: #f8fafc; }
+.card { background: var(--panel); border-color: var(--border); }
+.card h3 { color: var(--head); }
 .card p { color: var(--slate-400); }
 
-.numbered li { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); color: var(--slate-300); }
+.numbered li { background: var(--panel); border-color: var(--border); color: var(--text); }
 
-.preview-card { background: rgba(15, 23, 42, 0.6); border-color: var(--slate-800); }
-.preview-card-header h3 { color: #f8fafc; }
+.preview-card { background: var(--panel); border-color: var(--border); }
+.preview-card-header h3 { color: var(--head); }
 .preview-tag { background: rgba(148, 163, 184, 0.08); color: var(--slate-400); border-color: var(--slate-700); }
 .preview-caption { color: var(--slate-400); }
 .bar-label { color: var(--slate-300); }
 .bar-track { background: var(--slate-800); }
 .donut { background: conic-gradient(var(--pulse-emerald-500) 0deg 83deg, var(--slate-700) 83deg 360deg); }
-.donut::after { background: #0f172a; }
+.donut::after { background: var(--panel); }
 .donut-num { color: var(--pulse-emerald-400); }
 .donut-sub { color: var(--slate-400); }
 .donut-legend { color: var(--slate-300); }
 .trend-axes { color: var(--slate-400); }
 
-.foot { background: #070b16; border-top-color: var(--slate-800); }
+.foot { background: var(--bg); border-top-color: var(--border); }
 .foot-inner { color: var(--slate-400); }
 .foot-col strong { color: #f8fafc; }
 .foot-col a { color: var(--slate-400); }
 .foot-col a:hover { color: var(--pulse-emerald-400); }
+/* Bar-chart value labels: cyan accent for legibility on the dark panel. */
+.bar-val { color: var(--accent); }
 /* .metrics-strip + .cta-strip already dark — left as-is */
