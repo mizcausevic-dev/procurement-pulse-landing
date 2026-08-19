@@ -285,10 +285,10 @@
         <h2>Get Issue #5 the moment it lands.</h2>
         <p>One email per quarter. No marketing list rentals, no surprise newsletters, no upsells you didn't ask for.</p>
         <form class="subscribe-form" action="" method="post" onsubmit="return handleSubmit(event)">
-          <input type="email" name="email" placeholder="you@workdomain.com" required aria-label="Email address" />
+          <input type="email" name="email" id="subscribe-email" placeholder="you@workdomain.com" required aria-label="Email address" />
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
-        <p class="cta-fineprint">
+        <p class="cta-fineprint" id="subscribe-fallback">
           Or just bookmark this page. Or email <a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> and we'll add you manually.
           Issues #1–#4 and the Verified Baseline are <strong>published</strong>; Issue #5 is in preparation.
         </p>
@@ -381,7 +381,20 @@
       e.preventDefault();
       const email = e.target.email.value;
       if (!email) return false;
-      window.location.href = `mailto:pulse@kineticgain.com?subject=Subscribe%20to%20AI%20Procurement%20Pulse&body=Please%20add%20me%20to%20the%20Pulse%20subscriber%20list.%0A%0AEmail%3A%20${encodeURIComponent(email)}`;
+      var mailto = `mailto:pulse@kineticgain.com?subject=Subscribe%20to%20AI%20Procurement%20Pulse&body=Please%20add%20me%20to%20the%20Pulse%20subscriber%20list.%0A%0AEmail%3A%20${encodeURIComponent(email)}`;
+      (window.dataLayer = window.dataLayer || []).push({ event: 'newsletter_signup', method: 'mailto' });
+      // window.location.href fails silently in most webmail-only setups (no
+      // registered mail client), so no on-page confirmation ever showed. A
+      // real <a> click gets the same OS handling, but we no longer treat
+      // "we tried" as "it worked": the fallback text below is always shown
+      // afterward, with the real address visible either way.
+      var link = document.createElement('a');
+      link.href = mailto;
+      link.click();
+      var fallback = document.getElementById('subscribe-fallback');
+      if (fallback) {
+        fallback.innerHTML = `If your email app just opened, send that draft and you're done. If nothing happened, email <a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> directly and mention <strong>${email.replace(/[<>&"]/g, '')}</strong>, we'll add you manually.`;
+      }
       return false;
     }
   </script>
