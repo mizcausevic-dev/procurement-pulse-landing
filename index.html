@@ -26,6 +26,77 @@
   <link rel="stylesheet" href="/assets/fonts.css" />
 
   <link rel="stylesheet" href="style.css?v=20260806-cyan" />
+
+  <style>
+    /* Pulse pipeline constellation (pulse-constellation.js). Additive
+       below the existing #methodology numbered list, which stays the
+       default, untouched, zero-click reference surface. Page-local only —
+       does not touch style.css. Uses this repo's own BERT dark-cyan
+       tokens (--panel/--border/--accent/--accent2/--muted/--head), never
+       kg-suite-web's --slate-*/--emerald-* names. See
+       pulse-constellation.js header comment for what's real vs. what was
+       deliberately left out. */
+    .pulc { margin: 2.25rem 0 .5rem; position: relative; }
+    .pulc-note { color: var(--muted); font-size: .85rem; margin: 0 0 1rem; text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .pulc-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 0 auto .9rem; max-width: 900px; }
+    .pulc-pill { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .03em; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--panel2); color: var(--muted); cursor: pointer; user-select: none; transition: transform .12s ease, border-color .15s ease, color .15s ease, background .15s ease; white-space: nowrap; -webkit-appearance: none; appearance: none; }
+    .pulc-pill:hover { transform: translateY(-1px); color: var(--head); }
+    .pulc-pill:focus-visible, .pulc-pill:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .pulc-pill.active { color: var(--panel); font-weight: 700; border-color: transparent; }
+    .pulc-pill.reset { border-color: var(--accent); color: var(--accent); }
+    .pulc-pill.reset.active { background: var(--accent); }
+    .pulc-stage { position: relative; margin: 0 auto; max-width: 640px; overflow: hidden; border-radius: 50%; }
+    .pulc-stage svg { display: block; width: 100%; height: auto; }
+    .pulc-sweep { position: absolute; inset: 0; pointer-events: none; border-radius: 50%; background: conic-gradient(from 0deg, transparent 0deg, rgba(102, 252, 241, .1) 12deg, transparent 26deg, transparent 360deg); animation: pulc-spin 20s linear infinite; mix-blend-mode: screen; }
+    @keyframes pulc-spin { to { transform: rotate(360deg); } }
+    .pulc .node-hub circle.ring { fill: none; stroke-width: 1.3; transition: opacity .25s ease; }
+    .pulc .node-hub circle.core { stroke-width: 1.5; transition: opacity .25s ease, r .15s ease; }
+    .pulc .node-leaf circle { stroke-width: 1.1; transition: opacity .25s ease, r .15s ease; }
+    .pulc .node-leaf circle.beacon { animation: pulc-pulse 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes pulc-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+    .pulc .spoke, .pulc .branch { fill: none; stroke-width: 1; transition: opacity .25s ease, stroke-width .15s ease; }
+    .pulc .arc { fill: none; stroke-width: 1.6; opacity: .5; }
+    .pulc .lbl-hub { font-family: var(--font-mono); font-weight: 700; letter-spacing: .02em; transition: opacity .25s ease; }
+    .pulc .lbl-leaf { font-family: var(--font-mono); transition: opacity .25s ease; }
+    .pulc .dim { opacity: .14 !important; }
+    .pulc .center-core { fill: var(--panel); stroke: var(--accent); stroke-width: 1.8; }
+    .pulc .center-ring { fill: none; stroke: var(--accent2); stroke-width: 1; stroke-dasharray: 3 5; opacity: .6; }
+    .pulc .center-lbl { font-family: var(--font-mono); font-weight: 800; fill: var(--head); letter-spacing: .04em; }
+    .pulc .center-sub { font-family: var(--font-mono); fill: var(--muted); letter-spacing: .04em; }
+    .pulc .hoverable { cursor: pointer; }
+    .pulc .hoverable:focus-visible, .pulc .hoverable:focus { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .pulc-dossier { max-width: 640px; margin: 1rem auto 0; background: var(--panel2); border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.4rem; display: none; max-height: 320px; overflow-y: auto; position: relative; }
+    .pulc-dossier.show { display: block; }
+    .pulc-dossier .kind { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .pulc-dossier h3 { margin: 0 0 8px; color: var(--head); font-size: 1.05rem; line-height: 1.3; font-family: var(--font-head); }
+    .pulc-dossier p { margin: 0 0 12px; font-size: .86rem; color: var(--text); line-height: 1.55; }
+    .pulc-dossier .fields { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+    .pulc-dossier .field { display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
+    .pulc-dossier .field span { font-family: var(--font-mono); font-size: .64rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); min-width: 96px; padding-top: 2px; }
+    .pulc-dossier .field strong { color: var(--head); font-family: var(--font-mono); font-size: .86rem; font-weight: 700; }
+    .pulc-dossier .field .codes { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pulc-dossier .field code { font-family: var(--font-mono); font-size: .74rem; color: var(--accent); background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 2px 7px; }
+    .pulc-dossier a.go { display: inline-block; font-family: var(--font-mono); font-size: .78rem; color: var(--accent); border: 1px solid var(--border); border-radius: 8px; padding: 6px 11px; text-decoration: none; }
+    .pulc-dossier a.go:hover { background: var(--accent); color: var(--panel); text-decoration: none; }
+    .pulc-dossier .close { position: absolute; top: 12px; right: 14px; color: var(--muted); cursor: pointer; font-family: var(--font-mono); font-size: .95rem; background: none; border: none; padding: 4px; }
+    .pulc-dossier .close:focus-visible, .pulc-dossier .close:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    @media (max-width: 640px) { .pulc-dossier .field span { min-width: 100%; } }
+
+    /* Send-to-LLM deep-link buttons (send-to-llm.js renders into
+       .send-to-llm containers). Opens the visitor's own LLM tab with a
+       pre-filled prompt; no page content is read by this site. */
+    .send-to-llm { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-top: 1.75rem; }
+    .send-to-llm-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+    .send-to-llm-btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .02em; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .2); background: rgba(255, 255, 255, .06); color: var(--slate-300); text-decoration: none; transition: color .18s ease, border-color .18s ease, background .18s ease, transform .12s ease; }
+    .send-to-llm-icon { width: 14px; height: 14px; flex-shrink: 0; fill: currentColor; }
+    .send-to-llm-btn:hover { color: #fff; border-color: var(--accent); transform: translateY(-1px); text-decoration: none; }
+    .send-to-llm-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      .pulc-sweep, .pulc .node-leaf circle.beacon { animation: none; }
+      .send-to-llm-btn { transition: none; }
+      .send-to-llm-btn:hover { transform: none; }
+    }
+  </style>
 </head>
 <body>
   <header class="nav">
@@ -77,6 +148,7 @@
           <a class="btn btn-primary" href="/baseline/">Read the Baseline →</a>
           <a class="btn btn-secondary" href="#subscribe">Get Issue #5 by email</a>
         </div>
+        <div class="send-to-llm" data-prompt="Please explain and summarize the key takeaways of this page:"></div>
       </div>
     </section>
 
@@ -244,6 +316,26 @@
           respects <code>robots.txt</code>, rate-limits to 10 req/s per origin, and identifies itself with a contact email
           in the User-Agent string. No authentication. No headless browser. No vendor cooperation needed.
         </p>
+
+        <div class="pulc" id="pulse-constellation" aria-label="The Pulse measurement pipeline, visualized: six real steps from universe selection to reporting, mapped to the real tools each step calls">
+          <p class="pulc-note">
+            The same six steps above, mapped to the real tools behind each one and grouped by phase. Click a step to
+            filter, click a fact for detail. Tab through with a keyboard; Enter/Space activates a node like a click.
+          </p>
+          <div class="pulc-pills" id="pulc-pillbar"></div>
+          <div class="pulc-stage">
+            <div class="pulc-sweep" aria-hidden="true"></div>
+            <svg id="pulc-graph" viewBox="0 0 1000 1000" role="group" aria-label="Radial map of the Pulse pipeline: 6 measurement steps, hub size scaled to each step's real fact count. 6 focusable steps, 18 focusable facts."></svg>
+          </div>
+          <div class="pulc-dossier" id="pulc-dossier">
+            <button class="close" id="pulc-dossierClose" aria-label="Close details panel">&times;</button>
+            <div class="kind" id="pulc-dKind"></div>
+            <h3 id="pulc-dTitle"></h3>
+            <p id="pulc-dDesc"></p>
+            <div class="fields" id="pulc-dFields"></div>
+            <a class="go" id="pulc-dLink" href="#methodology">Jump to methodology &darr;</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -376,6 +468,8 @@
     </div>
   </footer>
 
+  <script src="/pulse-constellation.js" defer></script>
+  <script src="/send-to-llm.js" defer></script>
   <script>
     function handleSubmit(e) {
       e.preventDefault();
