@@ -26,7 +26,7 @@ python -m http.server 8080
 
 ## Deployment
 
-The [deploy workflow](.github/workflows/deploy.yml) runs on pushes to `main`, manually, and hourly. It SFTP-extracts the site into the Hostinger `/pulse/` directory and checks the home page returns HTTP 200. It requires `FTP_HOST`, `FTP_USER`, and `SSH_PRIVATE_KEY` repository secrets. The HTTP 200 check does not prove that exact new bytes reached the host; verify the changed content and restore path after a release.
+The [deploy workflow](.github/workflows/deploy.yml) runs only when manually dispatched. A push to `main` does not publish this page. The workflow SFTP-extracts the site into the Hostinger `/pulse/` directory and checks the home page returns HTTP 200. It requires `FTP_HOST`, `FTP_USER`, and `SSH_PRIVATE_KEY` repository secrets. The HTTP 200 check does not prove that exact new bytes reached the host; verify the changed content and restore path after a release.
 
 ## Related repositories
 
