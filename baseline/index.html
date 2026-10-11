@@ -1,35 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Procurement Pulse · The Verified Baseline — between Issue #4 and Issue #5</title>
-  <meta name="description" content="Between-issues note locking in the v0.4 engine baseline: 899-domain locked universe (pre-registered), 2,005-domain current universe (2026-06-02), KG verified=11/11, per-spec discriminator eliminates SPA catch-all false positives. Calibrated for the August 2026 quarterly delta (Issue #5)." />
-  <meta name="theme-color" content="#070b16" />
-  <link rel="canonical" href="https://pulse.kineticgain.com/baseline/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Procurement Pulse · May 2026 historical baseline</title>
+  <meta name="description" content="Historical v0.4 Pulse baseline from May–June 2026. Its reported 11 signature checks do not establish schema conformance or current status; Issue #5 has not been published here.">
+  <meta name="theme-color" content="#070b16">
+  <link rel="canonical" href="https://pulse.kineticgain.com/baseline/">
 
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="The Verified Baseline — Pulse engine v0.4 + KG verified=11/11" />
-  <meta property="og:description" content="Between Issue #4 and Issue #5. The instrument is calibrated: per-spec discriminator landed, dogfooded docs signed and verified, universe at 2,005 domains (2026-06-02). The August quarterly delta has something to measure against." />
-  <meta property="og:url" content="https://pulse.kineticgain.com/baseline/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Verified Baseline — Pulse engine v0.4 + KG verified=11/11" />
-  <meta name="twitter:description" content="2,005-domain universe (2026-06-02), 11/11 ed25519-verified, SPA catch-alls correctly score 0. The calibrated baseline against which Issue #5 (August 2026) reports the first quarterly delta." />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pulse v0.4 historical baseline · May 2026">
+  <meta property="og:description" content="Dated method and signature readings, with a later schema-conformance caveat. No current crawl is implied.">
+  <meta property="og:url" content="https://pulse.kineticgain.com/baseline/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pulse v0.4 historical baseline · May 2026">
+  <meta name="twitter:description" content="Dated Pulse methodology and signature readings; schema conformance and current status require separate checks.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "AI Procurement Pulse — The Verified v0.4 Baseline",
+    "name": "AI Procurement Pulse — Historical v0.4 Baseline",
     "alternateName": "Pulse v0.4 Baseline (pre-registered for Issue #5, August 2026)",
-    "description": "Between-issues calibration baseline for the AI Procurement Pulse quarterly disclosure index. Engine v0.4 carries a per-spec discriminator (retires Gatsby SPA-catchall false positives). KG dogfooded documents are ed25519-signed and verified — the first verified row in any Pulse measurement. Universe at 2,005 domains as of 2026-06-01 (was 1,007 at the 2026-05-28 snapshot); the locked pre-registered baseline against which Issue #5 reports is the 899-domain crawl in issue-4-v04-full.json.",
+    "description": "Historical May–June 2026 baseline for the AI Procurement Pulse. The then-reported signature checks do not establish schema conformance or current publication status. The locked 899-domain crawl is in issue-4-v04-full.json.",
     "url": "https://pulse.kineticgain.com/baseline/",
     "datePublished": "2026-05-28",
-    "dateModified": "2026-05-28",
+    "dateModified": "2026-10-10",
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "creator": {
       "@type": "ProfessionalService",
@@ -64,7 +64,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css">
   <style>
     .big-stat {
       text-align: center;
@@ -95,6 +95,10 @@
     .verified-block { background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
     .verified-block code { background: rgba(16, 185, 129, 0.12); padding: 1px 6px; border-radius: 4px; }
     .verified-block .lbl { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pulse-emerald-500); margin-bottom: 0.4rem; }
+    .verified-block p:first-of-type { margin: 0 0 0.6rem; }
+    .verified-block p:last-of-type { margin: 0; }
+    .baseline-followup { margin-top: 1.25rem; }
+    .baseline-actions { margin-top: 2rem; }
 
     .spec-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.92rem; }
     .spec-table th, .spec-table td { border-bottom: 1px solid var(--slate-200); padding: 0.55rem 0.75rem; text-align: left; }
@@ -142,16 +146,19 @@
       <div class="hero-inner">
         <p class="breadcrumb"><a href="/">AI Procurement Pulse</a> → <a href="/issue-4/">Issue #4</a> → Baseline</p>
         <span class="pill mono">BETWEEN ISSUES · MAY 2026 · THE VERIFIED BASELINE</span>
-        <h1>The instrument is now <span class="accent">calibrated and verified.</span></h1>
+        <h1>The dated <span class="accent">v0.4 baseline.</span></h1>
         <p class="lede">
-          Three things have landed since Issue #4 shipped. The engine now carries a
-          <strong>per-spec discriminator</strong> that retires the Gatsby-SPA-catchall false-positive class.
-          The eleven dogfooded <code>kineticgain.com</code> documents are now <strong>ed25519-signed and verified</strong>
-          — the first <code>verified</code> row in any Pulse measurement. And the universe has grown to
-          <strong>2,005 domains</strong> (as of 2026-06-01), including every <code>.kineticgain.com</code> operator surface
-          that the portfolio actually deploys. This page is the locked-in baseline against which
-          <strong>Issue #5 (August 2026)</strong> reports the first true quarterly delta.
+          By this May–June 2026 baseline, the engine had gained a
+          <strong>per-spec discriminator</strong> that addressed the Gatsby-SPA-catchall false-positive class.
+          The engine reported <strong>ed25519 signature verification</strong> for eleven dogfooded
+          <code>kineticgain.com</code> documents at that time. The linked May 28 crawl artifact
+          covered <strong>1,007 domains</strong>; the separate editorial universe count was 2,005 by
+          June 1, without a linked full crawl of that expanded set. This page records the intended
+          baseline for Issue #5; that issue is not published here.
         </p>
+        <p class="lede"><strong>Editorial note, October 2026:</strong> “Verified” on this historical page refers to the
+          reported signature check, not schema validity. A separate <a href="https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite/blob/main/estate/manifest.json">September 12 estate audit</a>
+          found 0 of 11 sampled documents valid against their own schemas. This page has not rechecked the current documents.</p>
       </div>
     </section>
 
@@ -159,39 +166,38 @@
       <div class="block-inner">
         <h2>The baseline numbers, locked in</h2>
         <p class="prose">
-          A full v0.4 crawl on the 899-domain universe at hardening close. The raw is committed to
-          <code>procurement-pulse-engine/data/issue-4-v04-full.json</code>. The numbers below are not
-          a re-publish of Issue #4 — they are the calibrated instrument's current reading, with the
-          discriminator and signing fixes both applied.
+          The locked 899-domain crawl is in <code>procurement-pulse-engine/data/issue-4-v04-full.json</code>.
+          The numbers below come from the later <code>baseline-2026-05-28.json</code> crawl of 1,007
+          domains. Both are dated engine readings, not a present-day measurement.
         </p>
         <div class="drift-grid">
-          <div class="drift-card"><div class="d-num">2,005</div><div class="d-lab">domains in universe (now, 2026-06-01)</div></div>
+          <div class="drift-card"><div class="d-num">1,007</div><div class="d-lab">domains in May 28 crawl artifact</div></div>
           <div class="drift-card"><div class="d-num">1</div><div class="d-lab">domains publishing (real)</div></div>
           <div class="drift-card"><div class="d-num">0.10%</div><div class="d-lab">aggregate publication rate</div></div>
-          <div class="drift-card"><div class="d-num">11 / 11</div><div class="d-lab">KG docs verified (ed25519)</div></div>
-          <div class="drift-card"><div class="d-num">100</div><div class="d-lab">kineticgain.com score</div></div>
+          <div class="drift-card"><div class="d-num">11 / 11</div><div class="d-lab">May 2026 KG signature checks reported (ed25519)</div></div>
+          <div class="drift-card"><div class="d-num">100</div><div class="d-lab">May presence score, not schema validity</div></div>
           <div class="drift-card"><div class="d-num dim">0</div><div class="d-lab">false positives (was: 1 in Issue #4)</div></div>
         </div>
         <div class="callout">
-          <strong>Why the universe count moved.</strong> Issue #4 published with 834 domains. The current universe is at
-          <strong>2,005 domains across 30+ verticals</strong> as of 2026-06-01 — the difference is editorial sourcing work,
-          not a re-crawl: Forbes AI 50 net-new (28), hand-picked HealthTech AI (18), hand-picked K-12 EdTech (12), every
-          <code>.kineticgain.com</code> operator-surface CNAME the portfolio deploys (now 60+), a CISO procurement pack
+          <strong>Why the editorial universe count moved.</strong> Issue #4 published with 834 domains. The later universe list was at
+          <strong>2,005 domains across 30+ verticals</strong> as of 2026-06-01 — an editorial expansion,
+          not a corresponding published full crawl: Forbes AI 50 net-new (28), hand-picked HealthTech AI (18), hand-picked K-12 EdTech (12), every
+          <code>.kineticgain.com</code> operator-surface CNAME the portfolio deployed (then 60+), a CISO procurement pack
           (64 domains across AI security, GRC, vendor risk, DevSecOps, IAM, OT/IoT, SecOps, MLOps), and the post-2026-05-28
           additions: Climate/ESG · Supply Chain · FinOps · Observability · Identity (+18) plus DevOps/PlatformEng/ChaosEng
-          (+50). The "every deploy enters universe" rule is now a v2 strategy invariant — measured properties grow with
+          (+50). The "every deploy enters universe" rule was a v2 strategy invariant — measured properties grew with
           the portfolio, not behind it.
         </div>
         <div class="callout warn">
           <strong>Two baseline artifacts, two purposes.</strong> The <strong>locked-in baseline</strong> for the
-          Issue #5 drift report is <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/issue-4-v04-full.json" target="_blank" rel="noreferrer"><code>data/issue-4-v04-full.json</code></a>
+          planned Issue #5 drift report was <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/issue-4-v04-full.json" target="_blank" rel="noreferrer"><code>data/issue-4-v04-full.json</code></a>
           (899 domains, same publisher set). The <strong>latest snapshot</strong> at
           <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/blob/main/data/baseline-2026-05-28.json" target="_blank" rel="noreferrer"><code>data/baseline-2026-05-28.json</code></a>
-          (1,007 domains at snapshot time) documents that adding net-new domains does not move the headline. As of
-          2026-06-01 the universe is 2,005 — adding ~1,106 net-new domains since Issue #4 still leaves the publication
-          rate at <code>1 / 2,005 (0.07%)</code>, indistinguishable from the pre-registered rate. August 2026 measures
-          Issue #5 against the locked baseline; this is the falsifiable proof that universe expansion is editorial
-          sourcing, not numerator manipulation.
+          (1,007 domains at crawl time) reported one publishing domain and a 0.10% publication rate.
+          The June 1 editorial universe list had 2,005 domains, but this page links no full crawl
+          of that expanded set and therefore establishes no publication rate for it. The intended
+          later comparison was against the locked 899-domain baseline; this page does not establish
+          that the August run occurred.
         </div>
       </div>
     </section>
@@ -204,9 +210,10 @@
           built with Gatsby, and its catch-all returns the 404 page-context payload as <code>application/json</code>
           for any <code>/.well-known/*</code> path. Engine v0.4 (commit
           <a href="https://github.com/mizcausevic-dev/procurement-pulse-engine/commit/5892d88" target="_blank" rel="noreferrer"><code>5892d88</code></a>)
-          now requires each of the eleven Suite paths to carry its canonical <code>*_version</code> field —
+          then required each of the eleven probed paths to carry its canonical <code>*_version</code> field —
           the minimal Suite-spec shape, not just "valid JSON". Re-probed live, <code>corporate.charter.com</code>
-          drops 82 → 0; <code>kineticgain.com</code> holds 100/100. The instrument now distinguishes a
+          dropped 82 → 0; <code>kineticgain.com</code> held 100/100 on that presence/discriminator score,
+          which was not a schema-conformance score. The instrument then distinguished a
           Suite document from a SPA's internal page-rendering context.
         </p>
 
@@ -241,38 +248,40 @@
 
     <section class="block">
       <div class="block-inner">
-        <h2>The first verified row</h2>
+        <h2>The first reported signature-verified row</h2>
         <p class="prose">
-          The Issue #1 commitment around ed25519 signature verification has now closed.
-          <code>kineticgain.com</code>'s eleven dogfooded <code>/.well-known/</code> documents are signed
+          The May 2026 engine run reported closing the Issue #1 signature-check commitment.
+          It reported that <code>kineticgain.com</code>'s eleven dogfooded <code>/.well-known/</code> documents were signed
           against a public key published at
           <a href="https://kineticgain.com/.well-known/pulse-signing.json" target="_blank" rel="noreferrer"><code>kineticgain.com/.well-known/pulse-signing.json</code></a>.
-          The engine probe now reports <code>{ verified: 11, unsigned: 0, invalid: 0 }</code> on the dogfood row —
-          the first time any row in any Pulse measurement has carried a verified signature.
+          The dated engine probe reported <code>{ verified: 11, unsigned: 0, invalid: 0 }</code> on the dogfood row.
+          That field describes signatures, not schema conformance.
         </p>
 
         <div class="verified-block">
-          <div class="lbl">Verified · kineticgain.com</div>
-          <p style="margin:0 0 0.6rem;">All eleven Suite documents under <code>kineticgain.com/.well-known/</code>
-          are signed with the same ed25519 keypair. The signature covers the canonical serialization of each
+          <div class="lbl">May 2026 signature result · kineticgain.com</div>
+          <p>The eleven probed documents under <code>kineticgain.com/.well-known/</code>
+          were reported signed with the same ed25519 keypair. The signature covered the canonical serialization of each
           document with the <code>signature</code> block recursively removed and remaining keys sorted.</p>
-          <p style="margin:0;">By default the engine trusts the embedded <code>public_key</code> (tamper-evident).
+          <p>By default the engine trusts the embedded <code>public_key</code> (tamper-evident).
           With <code>--verify-key-fetch</code> it instead fetches the key from <code>signing_key_url</code>
-          (provenance). Both pass on the dogfood row. The probe pattern mirrors
+          (provenance). Both checks passed on the dated dogfood row. The probe pattern mirrors
           <a href="https://github.com/mizcausevic-dev/hash-attestation-rs" target="_blank" rel="noreferrer"><code>hash-attestation-rs</code></a>.</p>
         </div>
 
-        <p class="prose" style="margin-top: 1.25rem;">
+        <p class="prose baseline-followup">
           For any future vendor that signs their Suite docs and publishes a key, the engine will roll the
-          verification state up into <code>signatures.verifiedRate</code> on the issue dataset — the August
-          read will report this as a leading indicator separately from the publication rate.
+          verification state up into <code>signatures.verifiedRate</code> on a later issue dataset.
+          This page does not establish that the planned August read was published.
         </p>
       </div>
     </section>
 
     <section class="block block-tinted">
       <div class="block-inner" id="issue-5">
-        <h2>What Issue #5 (August 2026) reports against</h2>
+        <h2>Archived plan for Issue #5 (August 2026)</h2>
+        <p class="prose">The following was the original comparison plan, preserved as a historical record.
+          Issue #5 is not published on this site, so these are intended checks rather than results.</p>
         <p class="prose">
           The August quarterly delta is the first time the Pulse runs against a calibrated instrument.
           Issue #1 was the zero-baseline calibration; Issues #2 and #3 expanded and stress-tested it;
@@ -283,17 +292,17 @@
         <ul class="prose">
           <li><strong>Same universe, recrawled.</strong> No editorial pivots between now and August.
             Numbers move because vendors move, not because the lens did.</li>
-          <li><strong>The publication rate</strong> — locked at <code>1 / 899 (0.11%)</code> per the pre-registration,
-            <code>1 / 2,005 (0.07%)</code> on the current universe (2026-06-02) — is the baseline.
-            Anything above it is news.</li>
+          <li><strong>The publication rate</strong> — the locked 899-domain crawl reported <code>1 / 899 (0.11%)</code>;
+            the May 28 1,007-domain crawl reported <code>1 / 1,007 (0.10%)</code>. A 2,005-domain
+            publication rate cannot be inferred without a crawl of that expanded universe.</li>
           <li><strong>The verification rate</strong> is reported separately. If even one new domain joins
             <code>kineticgain.com</code> in the <code>verified</code> column, that's a structural shift, not noise.</li>
           <li><strong>The drift artifact</strong> (<code>data/issue-5-drift.json</code>) will surface every
             per-domain change: newly publishing, stopped publishing, score and per-spec changes. Reproducible,
             not editorial.</li>
         </ul>
-        <div class="hero-cta" style="margin-top:2rem;">
-          <a class="btn btn-primary" href="/#subscribe">Get Issue #5 by email</a>
+        <div class="hero-cta baseline-actions">
+          <a class="btn btn-primary" href="/#subscribe">Request issue updates</a>
           <a class="btn btn-secondary" href="https://github.com/mizcausevic-dev/procurement-pulse-engine" target="_blank" rel="noreferrer">Reproduce the v0.4 baseline</a>
         </div>
       </div>
@@ -301,9 +310,9 @@
 
     <section class="block">
       <div class="block-inner">
-        <h2>Pre-registration — the read-locked plan for August</h2>
+        <h2>Archived pre-registration plan for August 2026</h2>
         <p class="prose">
-          To keep the instrument honest, the August read is pre-registered here, not adjusted after the fact:
+          These were the planned constraints. This page does not verify that the August crawl ran:
         </p>
         <ul class="prose">
           <li><strong>Crawl date:</strong> the first weekday on or after 2026-08-15.</li>

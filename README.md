@@ -1,61 +1,41 @@
 # procurement-pulse-landing
 
-Static landing site for the **AI Procurement Pulse** — a quarterly research publication that measures vendor AI governance disclosure across the open internet, using the [Kinetic Gain Protocol Suite](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite) as its substrate.
+Static publication site for the **AI Procurement Pulse**, which reports dated observations of public AI governance disclosures. Its method refers to applicable documents from the [Kinetic Gain Protocol Suite](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite), currently twelve open specifications.
 
 Live at **[pulse.kineticgain.com](https://pulse.kineticgain.com)**.
 
 ## What this is
 
-The Pulse is the *Cloudflare Radar of AI procurement*. Every ninety days we crawl ~1,200 vendor domains' `/.well-known/` endpoints, validate any Suite documents we find via [`aeo-validator-service`](https://github.com/mizcausevic-dev/aeo-validator-service), check signatures via [`hash-attestation-rs`](https://github.com/mizcausevic-dev/hash-attestation-rs), and publish a public report on:
+The landing page links to Issues #1–#4 and a May 2026 methodology baseline. Each issue is a dated measurement with its own universe, limitations, and data links. The landing page is not a live crawl, and Issue #5 is not published here. The May baseline's reported signature verification does not establish current signature or schema validity.
 
-- Publication rate by vertical (EdTech, HealthTech, FinTech, Federal, CPG)
-- Signed-vs-unsigned ratios
-- Drift events per 1k checks
-- Decision Card adoption (the buyer side)
-- A signature honor roll
+The page includes projected chart formats, explicitly labeled illustrative. The email control opens a mail draft; sending that draft is required to request updates. There is no subscription backend.
 
-**Issue #0 (this site) is the methodology issue.** Issue #1 with real data ships **Q3 2026 (July)**.
+## Published sections
 
-## What's here
-
-```
-.
-├── index.html              # the manifesto + preview charts + signup
-├── style.css               # emerald-on-slate publication palette
-├── .github/workflows/
-│   └── deploy.yml          # FTPS push to /pulse/ on Hostinger on push to main
-└── README.md
-```
-
-No build step. Hand-written HTML + CSS + ~10 lines of inline JS for the email signup mailto fallback.
+- [Standing methodology](https://pulse.kineticgain.com/)
+- [Issue #1](https://pulse.kineticgain.com/issue-1/) · [Issue #2](https://pulse.kineticgain.com/issue-2/) · [Issue #3](https://pulse.kineticgain.com/issue-3/) · [Issue #4](https://pulse.kineticgain.com/issue-4/)
+- [Historical baseline](https://pulse.kineticgain.com/baseline/)
 
 ## Local preview
 
-```bash
-python3 -m http.server 8080
-# open http://localhost:8080
+```powershell
+cd C:\Users\chaus\Documents\Codex\repos\procurement-pulse-landing
+python -m http.server 8080
+# Open http://localhost:8080
 ```
 
 ## Deployment
 
-Pushes to `main` trigger a GitHub Actions workflow that FTP-syncs the site root to `/pulse/` on Hostinger.
-
-Required repo secrets: `FTP_HOST`, `FTP_USER`, `FTP_PASS` (same values as every other landing repo in the org).
-
-## Roadmap
-
-- **Issue #0 (this site)**: methodology, projected charts, signup, manifesto.
-- **Issue #1, Q3 2026 (July)**: first real-data report. Universe: Fortune 500 + top 100 K-12 EdTech + top 50 HealthTech AI vendors. ~1,200 domains.
-- **Issue #2+**: quarterly cadence. Vertical deep-dives rotate (Issue #2 leads with EdTech, Issue #3 with HealthTech, etc.).
-- **Premium edition** (Q4 2026): per-vendor named rows + downloadable CSV + drift change-logs. $499 per quarter for procurement teams.
+The [deploy workflow](.github/workflows/deploy.yml) runs only when manually dispatched. A push to `main` does not publish this page. The workflow SFTP-extracts the site into the Hostinger `/pulse/` directory and checks the home page returns HTTP 200. It requires `FTP_HOST`, `FTP_USER`, and `SSH_PRIVATE_KEY` repository secrets. The HTTP 200 check does not prove that exact new bytes reached the host; verify the changed content and restore path after a release.
 
 ## Related repositories
 
-- **[kinetic-gain-protocol-suite](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite)** — the 11-spec substrate the Pulse measures
+- **[kinetic-gain-protocol-suite](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite)** — twelve open specifications
+- **[procurement-pulse-engine](https://github.com/mizcausevic-dev/procurement-pulse-engine)** — dated measurement implementation and data artifacts
 - **[aeo-crawler](https://github.com/mizcausevic-dev/aeo-crawler)** — the crawl engine
-- **[aeo-validator-service](https://github.com/mizcausevic-dev/aeo-validator-service)** — always-on validator
-- **[hash-attestation-rs](https://github.com/mizcausevic-dev/hash-attestation-rs)** — ed25519 signature verification
-- **[audit-stream-py](https://github.com/mizcausevic-dev/audit-stream-py)** — the spine that records every crawl + validation event
+- **[aeo-validator-service](https://github.com/mizcausevic-dev/aeo-validator-service)** — validation service
+- **[hash-attestation-rs](https://github.com/mizcausevic-dev/hash-attestation-rs)** — signature verification tooling
+- **[mcp-kinetic-gain](https://github.com/mizcausevic-dev/mcp-kinetic-gain)** — published v0.10.0 MCP server with 75 Suite tools; separate from the static Pulse page
 
 ## License
 
