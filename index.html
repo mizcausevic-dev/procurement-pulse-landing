@@ -16,12 +16,12 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Procurement Pulse — the quarterly disclosure index">
+  <meta property="og:title" content="AI Procurement Pulse — dated disclosure research">
   <meta property="og:description" content="Explore the Pulse methodology, dated Issues #1–#4, and the historical baseline for public AI governance disclosures.">
   <meta property="og:url" content="https://pulse.kineticgain.com/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Procurement Pulse — the quarterly disclosure index">
-  <meta name="twitter:description" content="Quarterly disclosure index for vendor AI governance posture across regulated and high-risk markets.">
+  <meta name="twitter:title" content="AI Procurement Pulse — dated disclosure research">
+  <meta name="twitter:description" content="Dated public issues on vendor AI governance disclosure. Issue #5 has not been published here.">
 
   <link rel="stylesheet" href="/assets/fonts.css">
 
@@ -105,7 +105,7 @@
         <span class="brand-mark" aria-hidden="true">〰️</span>
         <span class="brand-text">
           <strong>AI Procurement Pulse</strong>
-          <small>Kinetic Gain Research · Quarterly</small>
+          <small>Kinetic Gain Research · Dated issues</small>
         </span>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -124,11 +124,11 @@
     <section class="hero">
       <div class="hero-inner">
         <span class="pill mono">STANDING METHODOLOGY · DATED RESULTS</span>
-        <h1>The quarterly index of <span class="accent">vendor AI governance disclosure.</span></h1>
+        <h1>Dated research on <span class="accent">vendor AI governance disclosure.</span></h1>
         <p class="lede">
           The AI Procurement Pulse publishes dated readings of public <code>/.well-known/</code> disclosures
           against applicable <a href="https://suite.kineticgain.com/" target="_blank" rel="noreferrer">Kinetic Gain Protocol Suite</a> documents.
-          Issues #1–#4 and a methodology baseline are available. This page is not a live scan.
+          Issues #1–#4 and a methodology baseline are available. The series targets a quarterly cadence; this page is not a live scan.
         </p>
         <p class="lede">
           <strong><a href="/baseline/">Read the May 2026 baseline</a></strong> for the engine v0.4
@@ -305,7 +305,7 @@
           <li><strong>Validate.</strong> Every fetched document goes through <a href="https://validator.kineticgain.com/" target="_blank" rel="noreferrer"><code>aeo-validator-service</code></a>. Invalid documents are flagged but counted as <em>published</em> for the publication-rate numerator.</li>
           <li><strong>Signature check.</strong> If a document references a <code>signing_key_url</code>, <a href="https://github.com/mizcausevic-dev/hash-attestation-rs" target="_blank" rel="noreferrer"><code>hash-attestation-rs</code></a> verifies the ed25519 signature against the canonical-JSON hash.</li>
           <li><strong>Drift detection.</strong> Dated snapshots can be compared for changed content hashes and version fields; see each issue's published drift artifact.</li>
-          <li><strong>Reporting.</strong> Aggregated metrics (publication rate, validity rate, signature rate, drift rate) by vertical, by spec, by signed-status. Per-vendor rows go into the premium edition; public edition reports aggregate-only.</li>
+          <li><strong>Reporting.</strong> Published issues report dated aggregate findings, including publication, validity, signature, and drift measures where available. The linked public reports do not publish per-vendor rows.</li>
         </ol>
         <p class="prose">
           Operational crawl settings belong to each dated run. The linked crawler source describes
@@ -368,7 +368,7 @@
 
     <section id="subscribe" class="cta-strip">
       <div class="cta-strip-inner">
-        <span class="pill mono">QUARTERLY · FREE PUBLIC EDITION</span>
+        <span class="pill mono">DATED ISSUES · FREE PUBLIC EDITION</span>
         <h2>Request updates about Issue #5.</h2>
         <p>The button opens an email draft to Kinetic Gain. Send the draft to request updates; this site does not automatically register a subscription.</p>
         <div class="subscribe-form">
@@ -377,7 +377,7 @@
         </div>
         <p class="cta-fineprint" id="subscribe-fallback">
           Or just bookmark this page. Or email <a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> and we'll add you manually.
-          Issues #1–#4 and the Verified Baseline are <strong>published</strong>; Issue #5 is in preparation.
+          Issues #1–#4 and the May 2026 baseline are <strong>published</strong>; Issue #5 has not been published here.
         </p>
       </div>
     </section>
