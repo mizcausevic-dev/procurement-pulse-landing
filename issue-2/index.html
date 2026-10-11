@@ -32,6 +32,8 @@
       letter-spacing: -0.03em;
     }
     .big-stat .cap { color: var(--pulse-emerald-300); font-size: 1.05rem; margin-top: 0.75rem; }
+    .table-scroll { max-width: 100%; overflow-x: auto; }
+    .table-scroll:focus-visible { outline: 2px solid var(--pulse-emerald-400); outline-offset: 2px; }
     .ds-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: #fff; border: 1px solid var(--slate-200); border-radius: 12px; overflow: hidden; font-size: 0.92rem; }
     .ds-table th, .ds-table td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--slate-200); }
     .ds-table th { background: var(--slate-100); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--slate-600); }
@@ -147,6 +149,7 @@
       <div class="block-inner">
         <h2>The leaderboard</h2>
         <p class="prose">Every domain, scored 0–100 on the share of the eleven Suite documents it publishes. One row is green.</p>
+        <div class="table-scroll" role="region" aria-label="Issue 2 domain leaderboard" tabindex="0">
         <table class="ds-table">
           <thead><tr><th>Domain</th><th>Vertical</th><th>Published</th><th>Score</th><th>Tier</th></tr></thead>
           <tbody>
@@ -162,6 +165,7 @@
             <tr><td>mistral.ai</td><td>AI Platform</td><td class="zero">0 / 11</td><td class="zero">0 / 100</td><td class="zero">none</td></tr>
           </tbody>
         </table>
+        </div>
         <p class="preview-caption" style="margin-top:1rem;color:var(--slate-500);font-size:0.85rem;">
           Top 10 of 350. Full leaderboard, per-domain results, and the exact universe: <a href="data.json">issue-2/data.json</a>.
         </p>
@@ -172,6 +176,7 @@
       <div class="block-inner">
         <h2>The universe — by vertical</h2>
         <p class="prose">350 domains across 18 verticals, hand-selected to span the AI buying market. Publication rate is the share of domains in each vertical publishing <em>any</em> Suite document.</p>
+        <div class="table-scroll" role="region" aria-label="Issue 2 vertical adoption table" tabindex="0">
         <table class="ds-table">
           <thead><tr><th>Vertical</th><th>Domains</th><th>Publishing</th><th>Rate</th></tr></thead>
           <tbody>
@@ -195,6 +200,7 @@
             <tr><td>Government / Defense</td><td>3</td><td>0</td><td class="zero">0.0%</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
     </section>
 
@@ -202,6 +208,7 @@
       <div class="block-inner">
         <h2>Per-spec adoption</h2>
         <p class="prose">All eleven specs were probed at every domain. Each now has exactly one publisher — the same one.</p>
+        <div class="table-scroll" role="region" aria-label="Issue 2 per-spec adoption table" tabindex="0">
         <table class="ds-table">
           <thead><tr><th>Spec</th><th>Well-known path</th><th>Publishers</th></tr></thead>
           <tbody>
@@ -218,6 +225,7 @@
             <tr><td>AI Procurement Decision Card</td><td><code>/.well-known/decisions/</code></td><td class="win">1 / 350</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
     </section>
 
