@@ -2,30 +2,24 @@
    kg-suite-web's suite-constellation.js / specs-constellation.js /
    mcp-constellation.js (polar layout, hub/leaf/glow/sweep mechanics,
    dossier panel, filter pills) — adapted, not cloned, because this page's
-   real data shape is different: the Pulse doesn't have a "12 specs" or
-   "75 tools" count to visualize. What IS real and published right now is
-   the six-step measurement pipeline in the #methodology section, the real
-   tools each step calls (aeo-crawler, aeo-validator-service,
-   hash-attestation-rs), and the real universe composition (Fortune 500 +
-   EdTech + HealthTech, 2,044 domains per the live Baseline).
+   real data shape is different: the Pulse does not use the Suite's spec or
+   MCP tool counts as a crawl metric. This diagram explains the six-step
+   methodology and links related implementation repositories. Its contents
+   are descriptive, not a live measurement.
 
-   Issue #1 with real per-vertical numbers ships Q3 2026 — see the README.
-   Nothing below is a placeholder for that unpublished data. Every hub
-   description and leaf fact is copied verbatim (or lightly paraphrased,
-   never invented) from the #methodology <ol> and the metrics-strip already
-   on this page. The projected/illustrative preview charts above this
+   Issues #1–#4 are linked from the page. The projected preview charts above this
    diagram (bar chart, donut, trend line) are explicitly out of scope —
-   this diagram does not touch or restate any of those mocked numbers.
+   diagram are illustrative; this diagram does not restate their numbers.
 
    ADDITIVE: sits below the existing numbered methodology list, which stays
    the default, untouched, zero-click reference surface — this is a second,
-   exploratory way to read the same six real steps, not a replacement.
+   exploratory way to read the same six methodology steps.
 
    Accessibility (hard requirement, not decoration): every interactive hub
    and leaf carries a real tabindex="0", role="button" and a descriptive
    aria-label; Enter/Space fire the same handler as a click; keyboard focus
-   mirrors mouse hover for the dossier preview; every count rendered (leaf
-   totals, domain count) is real visible SVG text next to the node, never
+   mirrors mouse hover for the dossier preview; every count rendered is
+   visible SVG text next to the node, never
    size- or color-only; all animation is wrapped in prefers-reduced-motion
    (see the page's <style> block for the actual @media rule); the root
    <svg> is role="group", not role="img", so hubs and leaves stay in the
@@ -40,19 +34,17 @@
     report: "REPORT"
   };
 
-  // Every desc and leaf below is drawn from the #methodology <ol> and the
-  // metrics-strip already published in this page's own index.html — see
-  // the file header for the no-fabrication rationale.
+  // Hub text summarizes the dated-methodology section; it is not live data.
   var HUBS = [
     {
       code: "universe", cat: "source", badge: "Step 1", label: "Universe selection",
-      desc: "Issue #1 universe: Fortune 500 + top 100 K-12 EdTech vendors (EdTech Top 40 lists) + top 50 HealthTech AI vendors (FDA-cleared SaMD + clinical-decision-support market). Published as universe.csv alongside the issue. The live Baseline universe has since grown to 2,044 domains under the “every deploy enters universe” rule.",
-      leaves: ["Fortune 500", "Top 100 EdTech · K-12", "Top 50 HealthTech AI", "2,044 domains · v0.4"]
+      desc: "Each published issue defines a dated domain universe and links its available data artifacts. Universe sizes and selection rules differ between issues.",
+      leaves: ["Dated universe", "Issue-specific sample", "Published artifacts"]
     },
     {
       code: "crawl", cat: "measure", badge: "Step 2", label: "Crawl",
-      desc: "aeo-crawler hits each domain’s /.well-known/ for the eleven Suite documents. Output is JSON Lines, hashed for replay, so any measurement can be rerun against the same snapshot.",
-      leaves: ["aeo-crawler", "/.well-known/ · 11 docs", "JSON Lines, hashed"]
+      desc: "aeo-crawler probes applicable /.well-known/ document paths. The Suite has twelve specifications, but not all map to public endpoints.",
+      leaves: ["aeo-crawler", "/.well-known/ paths", "Dated observations"]
     },
     {
       code: "validate", cat: "measure", badge: "Step 3", label: "Validate",
@@ -61,17 +53,17 @@
     },
     {
       code: "signature", cat: "trust", badge: "Step 4", label: "Signature check",
-      desc: "If a document references a signing_key_url, hash-attestation-rs verifies the ed25519 signature against the canonical-JSON hash. The eleven dogfooded kineticgain.com documents are the first verified row in any Pulse measurement.",
+      desc: "Where a document carries signing material, the engine can check its ed25519 signature. A signature result does not establish schema conformance or current publication status.",
       leaves: ["hash-attestation-rs", "ed25519 signature", "canonical-JSON hash"]
     },
     {
       code: "drift", cat: "trust", badge: "Step 5", label: "Drift detection",
-      desc: "Each domain’s documents are re-fetched fourteen days into the quarter. A document whose content_hash changes without a corresponding version bump is logged as a drift event.",
-      leaves: ["Re-fetch at day 14", "content_hash w/o version bump"]
+      desc: "Available dated snapshots can be compared for changed content hashes and version fields. See each issue's published drift artifact.",
+      leaves: ["Dated snapshots", "Hash / version changes"]
     },
     {
       code: "reporting", cat: "report", badge: "Step 6", label: "Reporting",
-      desc: "Aggregated metrics by vertical (EdTech, HealthTech, FinTech, Federal contractors, CPG/Retail), by spec, and by signed-status. Public edition reports aggregate-only; per-vendor rows are reserved for the premium edition (Q4 2026).",
+      desc: "Published issues report dated aggregate findings with their methods and limits. Future edition formats are not assumed by this diagram.",
       leaves: ["Publication rate", "Validity rate", "Signature rate", "Drift rate"]
     }
   ];
@@ -191,7 +183,7 @@
   centerSub1.textContent = "v0.4";
   svg.appendChild(centerSub1);
   var centerSub2 = el("text", { class: "center-sub", x: CX, y: CY + 23, "text-anchor": "middle", "font-size": 8 });
-  centerSub2.textContent = "2,044 DOMAINS";
+  centerSub2.textContent = "DATED ISSUES";
   svg.appendChild(centerSub2);
 
   var dossier = document.getElementById("pulc-dossier");

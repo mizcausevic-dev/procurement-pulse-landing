@@ -399,6 +399,11 @@ h2 {
   border-radius: 4px;
   transition: width 600ms ease;
 }
+.bar-fill--62 { width: 62%; }
+.bar-fill--45 { width: 45%; }
+.bar-fill--38 { width: 38%; }
+.bar-fill--29 { width: 29%; }
+.bar-fill--12 { width: 12%; }
 .bar-val {
   font-size: 0.85rem;
   color: var(--pulse-emerald-700);

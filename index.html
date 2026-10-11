@@ -1,31 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Procurement Pulse — a quarterly index of vendor AI governance disclosure</title>
-  <meta name="description" content="The AI Procurement Pulse is a quarterly index of how AI vendors publicly disclose their governance posture — read straight from .well-known/ endpoints across Fortune 500, top EdTech, and top HealthTech vendors. Issues #1–#4 and the Verified Baseline are published; Issue #5 is in preparation." />
-  <meta name="theme-color" content="#0B0C10" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="canonical" href="https://pulse.kineticgain.com/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Procurement Pulse | Disclosure Research</title>
+  <meta name="description" content="Dated AI governance disclosure research, methodology, and published Issues #1–#4. The May 2026 baseline is historical; Issue #5 is not yet published here.">
+  <meta name="theme-color" content="#0B0C10">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://pulse.kineticgain.com/">
 
   <!-- Security headers — canonical source is .htaccess; <meta> tags are       -->
   <!-- offline-mirror fallbacks. HSTS, X-Frame, X-Content-Type-Options,        -->
   <!-- Permissions-Policy, COOP, CORP CANNOT be set via <meta>.                -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="AI Procurement Pulse — the quarterly disclosure index" />
-  <meta property="og:description" content="Cloudflare Radar for AI procurement. Quarterly published index of which vendors publicly disclose their AI governance posture via the Kinetic Gain Protocol Suite. Issues #1–#4 and the Verified Baseline are published; sign up for Issue #5." />
-  <meta property="og:url" content="https://pulse.kineticgain.com/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Procurement Pulse — the quarterly disclosure index" />
-  <meta name="twitter:description" content="Quarterly disclosure index for vendor AI governance posture across regulated and high-risk markets." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Procurement Pulse — the quarterly disclosure index">
+  <meta property="og:description" content="Explore the Pulse methodology, dated Issues #1–#4, and the historical baseline for public AI governance disclosures.">
+  <meta property="og:url" content="https://pulse.kineticgain.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Procurement Pulse — the quarterly disclosure index">
+  <meta name="twitter:description" content="Quarterly disclosure index for vendor AI governance posture across regulated and high-risk markets.">
 
-  <link rel="stylesheet" href="/assets/fonts.css" />
+  <link rel="stylesheet" href="/assets/fonts.css">
 
-  <link rel="stylesheet" href="style.css?v=20260806-cyan" />
+  <link rel="stylesheet" href="style.css?v=20260806-cyan">
 
   <style>
     /* Pulse pipeline constellation (pulse-constellation.js). Additive
@@ -115,7 +115,7 @@
         <a href="/issue-3/">Issue #3</a>
         <a href="/issue-4/">Issue #4</a>
         <a href="/baseline/">Baseline</a>
-        <a class="cta" href="#subscribe">Subscribe ↓</a>
+        <a class="cta" href="#subscribe">Updates ↓</a>
       </nav>
     </div>
   </header>
@@ -123,21 +123,18 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <span class="pill mono">STANDING METHODOLOGY · UPDATED AUG 2026</span>
+        <span class="pill mono">STANDING METHODOLOGY · DATED RESULTS</span>
         <h1>The quarterly index of <span class="accent">vendor AI governance disclosure.</span></h1>
         <p class="lede">
-          The AI Procurement Pulse measures, every ninety days, what AI vendors actually publish about
-          themselves at <code>/.well-known/</code> — Agent Cards, Tool Cards, Clinical AI Disclosures,
-          Procurement Decision Cards, the full <a href="https://suite.kineticgain.com/" target="_blank" rel="noreferrer">Kinetic Gain Protocol Suite</a>.
-          We read the open internet, score what's there, and report what isn't.
+          The AI Procurement Pulse publishes dated readings of public <code>/.well-known/</code> disclosures
+          against applicable <a href="https://suite.kineticgain.com/" target="_blank" rel="noreferrer">Kinetic Gain Protocol Suite</a> documents.
+          Issues #1–#4 and a methodology baseline are available. This page is not a live scan.
         </p>
         <p class="lede">
-          <strong><a href="/baseline/">The Verified Baseline is live</a></strong> — between Issue #4 and the
-          August quarterly delta. Engine v0.4 ships per-spec discriminator (retires the Gatsby SPA-catchall
-          false-positive class). The eleven dogfooded <code>kineticgain.com</code> documents are now
-          <strong>ed25519-signed and verified</strong> — the first <code>verified</code> row in any Pulse
-          measurement. Universe at <strong>2,044 domains</strong> (Issue #4 was 834; the difference is editorial
-          sourcing + the "every deploy enters universe" rule). The instrument is calibrated for August.
+          <strong><a href="/baseline/">Read the May 2026 baseline</a></strong> for the engine v0.4
+          discriminator and its reported signature checks on eleven Kinetic Gain documents. Those
+          are historical results: a valid signature does not establish schema conformance or
+          current publication status. Issue #5 has not been published on this site.
           <br>
           See also <a href="/issue-4/">Issue #4 — The Scaled Mirror</a>,
           <a href="/issue-3/">Issue #3 — Three-Day Drift Soak</a>,
@@ -146,7 +143,7 @@
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="/baseline/">Read the Baseline →</a>
-          <a class="btn btn-secondary" href="#subscribe">Get Issue #5 by email</a>
+          <a class="btn btn-secondary" href="#subscribe">Request issue updates</a>
         </div>
         <div class="send-to-llm" data-prompt="Please explain and summarize the key takeaways of this page:"></div>
       </div>
@@ -155,16 +152,16 @@
     <section class="metrics-strip">
       <div class="block-inner">
         <div class="metric">
-          <div class="metric-num mono">11</div>
-          <div class="metric-label">Open specs measured</div>
+          <div class="metric-num mono">12</div>
+          <div class="metric-label">Open Suite specs · endpoint coverage varies</div>
         </div>
         <div class="metric">
-          <div class="metric-num mono">2,044</div>
-          <div class="metric-label">Domains in universe · v0.4 current</div>
+          <div class="metric-num mono">4</div>
+          <div class="metric-label">Dated public issues linked</div>
         </div>
         <div class="metric">
-          <div class="metric-num mono">Q1, Q2, Q3, Q4</div>
-          <div class="metric-label">Publication cadence</div>
+          <div class="metric-num mono">May 2026</div>
+          <div class="metric-label">Historical v0.4 baseline</div>
         </div>
         <div class="metric">
           <div class="metric-num mono">$0</div>
@@ -182,23 +179,22 @@
           Every buyer reinvents the same review wheel because vendors don't disclose in a comparable format.
         </p>
         <p class="prose">
-          The Suite ships an open substrate that makes disclosure machine-readable. The Pulse measures who's using it —
-          and, more importantly, who isn't. Vendors that publish appear on the public scoreboard. Vendors that don't
-          appear on the same scoreboard with a blank cell. Buyers cite the report. Regulators reference it.
-          The race-to-the-top mechanism has, until now, been missing.
+          The Suite makes disclosures machine-readable. The published Pulse issues show what their
+          dated crawls observed, including gaps in publication. Read each issue's universe,
+          method, and limits before comparing vendors.
         </p>
         <div class="grid grid-3">
           <article class="card">
             <h3>For buyers</h3>
-            <p>One canonical place to compare vendor disclosure posture before procurement starts. Filter by vertical (EdTech, HealthTech, FinTech), by required field (HIPAA, FDA SaMD, FERPA), by signature status.</p>
+            <p>Review dated aggregate findings and the underlying method before asking a vendor for its own current evidence.</p>
           </article>
           <article class="card">
             <h3>For vendors</h3>
-            <p>Quarterly visibility into your peers' disclosure posture. If your direct competitors are publishing their Agent Cards and you aren't, the Pulse makes that gap legible to your prospects.</p>
+            <p>See what the dated crawls found and check whether your own public disclosures remain valid and current.</p>
           </article>
           <article class="card">
-            <h3>For regulators</h3>
-            <p>An evidence base for what self-disclosure can and cannot achieve in the AI market, refreshed every ninety days. Comparable across verticals, replicable methodology, no vendor cooperation required.</p>
+            <h3>For researchers</h3>
+            <p>Use the published methodology and issue data to study where public self-disclosure is present or absent.</p>
           </article>
         </div>
       </div>
@@ -220,27 +216,27 @@
           <div class="bar-chart">
             <div class="bar-row">
               <div class="bar-label">FinTech</div>
-              <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+              <div class="bar-track"><div class="bar-fill bar-fill--62"></div></div>
               <div class="bar-val mono">62%</div>
             </div>
             <div class="bar-row">
               <div class="bar-label">EdTech</div>
-              <div class="bar-track"><div class="bar-fill" style="width:45%"></div></div>
+              <div class="bar-track"><div class="bar-fill bar-fill--45"></div></div>
               <div class="bar-val mono">45%</div>
             </div>
             <div class="bar-row">
               <div class="bar-label">HealthTech</div>
-              <div class="bar-track"><div class="bar-fill" style="width:38%"></div></div>
+              <div class="bar-track"><div class="bar-fill bar-fill--38"></div></div>
               <div class="bar-val mono">38%</div>
             </div>
             <div class="bar-row">
               <div class="bar-label">Federal contractors</div>
-              <div class="bar-track"><div class="bar-fill" style="width:29%"></div></div>
+              <div class="bar-track"><div class="bar-fill bar-fill--29"></div></div>
               <div class="bar-val mono">29%</div>
             </div>
             <div class="bar-row">
               <div class="bar-label">CPG / Retail</div>
-              <div class="bar-track"><div class="bar-fill" style="width:12%"></div></div>
+              <div class="bar-track"><div class="bar-fill bar-fill--12"></div></div>
               <div class="bar-val mono">12%</div>
             </div>
           </div>
@@ -300,24 +296,23 @@
       <div class="block-inner">
         <h2>The methodology, end-to-end</h2>
         <p class="prose">
-          Every step is open-source. Every data point is publicly fetchable. The Pulse is reproducible by anyone who
-          runs the same crawl against the same universe of domains on the same day.
+          Published issues link their methods and data artifacts. Reproducing a reading requires
+          the same dated universe, probe rules, and disclosure snapshots; current sites may differ.
         </p>
         <ol class="numbered">
-          <li><strong>Universe selection.</strong> Issue #1: Fortune 500 + top 100 K-12 EdTech vendors (from EdTech Top 40 lists) + top 50 HealthTech AI vendors (FDA-cleared SaMD + clinical-decision-support market). ~1,200 domains. Published as <code>universe.csv</code> alongside the issue.</li>
-          <li><strong>Crawl.</strong> <a href="https://github.com/mizcausevic-dev/aeo-crawler" target="_blank" rel="noreferrer"><code>aeo-crawler</code></a> against each domain's <code>/.well-known/</code> for the eleven Suite documents. JSON Lines output, hashed for replay.</li>
+          <li><strong>Universe selection.</strong> Each issue names its dated domain universe and links its available data artifacts. Universe sizes differ between issues.</li>
+          <li><strong>Crawl.</strong> <a href="https://github.com/mizcausevic-dev/aeo-crawler" target="_blank" rel="noreferrer"><code>aeo-crawler</code></a> probes applicable <code>/.well-known/</code> document paths. The Suite currently has twelve specifications; not every spec maps to a public endpoint.</li>
           <li><strong>Validate.</strong> Every fetched document goes through <a href="https://validator.kineticgain.com/" target="_blank" rel="noreferrer"><code>aeo-validator-service</code></a>. Invalid documents are flagged but counted as <em>published</em> for the publication-rate numerator.</li>
           <li><strong>Signature check.</strong> If a document references a <code>signing_key_url</code>, <a href="https://github.com/mizcausevic-dev/hash-attestation-rs" target="_blank" rel="noreferrer"><code>hash-attestation-rs</code></a> verifies the ed25519 signature against the canonical-JSON hash.</li>
-          <li><strong>Drift detection.</strong> Each domain's documents are re-fetched fourteen days into the quarter. Any document whose <code>content_hash</code> changes without a corresponding version bump is logged as a drift event.</li>
+          <li><strong>Drift detection.</strong> Dated snapshots can be compared for changed content hashes and version fields; see each issue's published drift artifact.</li>
           <li><strong>Reporting.</strong> Aggregated metrics (publication rate, validity rate, signature rate, drift rate) by vertical, by spec, by signed-status. Per-vendor rows go into the premium edition; public edition reports aggregate-only.</li>
         </ol>
         <p class="prose">
-          The crawl runs from a US-East datacenter with a standard user-agent (<code>kineticgain-pulse-crawler/1.0</code>),
-          respects <code>robots.txt</code>, rate-limits to 10 req/s per origin, and identifies itself with a contact email
-          in the User-Agent string. No authentication. No headless browser. No vendor cooperation needed.
+          Operational crawl settings belong to each dated run. The linked crawler source describes
+          the implementation; a present-day run and its rate limits have not been verified by this page.
         </p>
 
-        <div class="pulc" id="pulse-constellation" aria-label="The Pulse measurement pipeline, visualized: six real steps from universe selection to reporting, mapped to the real tools each step calls">
+        <div class="pulc" id="pulse-constellation">
           <p class="pulc-note">
             The same six steps above, mapped to the real tools behind each one and grouped by phase. Click a step to
             filter, click a fact for detail. Tab through with a keyboard; Enter/Space activates a node like a click.
@@ -325,12 +320,12 @@
           <div class="pulc-pills" id="pulc-pillbar"></div>
           <div class="pulc-stage">
             <div class="pulc-sweep" aria-hidden="true"></div>
-            <svg id="pulc-graph" viewBox="0 0 1000 1000" role="group" aria-label="Radial map of the Pulse pipeline: 6 measurement steps, hub size scaled to each step's real fact count. 6 focusable steps, 18 focusable facts."></svg>
+            <svg id="pulc-graph" viewBox="0 0 1000 1000" role="group" aria-label="Radial map of six Pulse methodology steps with focusable details"></svg>
           </div>
           <div class="pulc-dossier" id="pulc-dossier">
-            <button class="close" id="pulc-dossierClose" aria-label="Close details panel">&times;</button>
+            <button type="button" class="close" id="pulc-dossierClose" aria-label="Close details panel">&times;</button>
             <div class="kind" id="pulc-dKind"></div>
-            <h3 id="pulc-dTitle"></h3>
+            <h3 id="pulc-dTitle">Methodology detail</h3>
             <p id="pulc-dDesc"></p>
             <div class="fields" id="pulc-dFields"></div>
             <a class="go" id="pulc-dLink" href="#methodology">Jump to methodology &darr;</a>
@@ -341,31 +336,31 @@
 
     <section id="issue1" class="block block-tinted">
       <div class="block-inner">
-        <h2>What's in Issue #1 — published Q3 2026</h2>
+        <h2>Questions the published issues explore</h2>
         <div class="grid grid-3">
           <article class="card">
             <h3 class="mono accent-text">§ 1 · The Public Index</h3>
-            <p>Aggregate publication rates across the 2,044-domain universe. By vertical, by spec, by signed-status. Reproducible. Reusable.</p>
+            <p>Dated aggregate publication rates using each issue's documented domain universe.</p>
           </article>
           <article class="card">
             <h3 class="mono accent-text">§ 2 · The Vertical Deep-Dives</h3>
-            <p>One per regulated vertical (EdTech, HealthTech, FinTech). What's required by law vs. what's published. Where the gap is widest.</p>
+            <p>Selected vertical cuts, with their own sample sizes and disclosure limitations.</p>
           </article>
           <article class="card">
             <h3 class="mono accent-text">§ 3 · The Drift Report</h3>
-            <p>Which vendor documents changed silently between snapshots, and by how much. The first quantitative answer to "is anyone actually maintaining these documents."</p>
+            <p>Which probed documents changed between available dated snapshots.</p>
           </article>
           <article class="card">
             <h3 class="mono accent-text">§ 4 · The Decision Card Watch</h3>
-            <p>How many buyers — districts, hospitals, agencies — published <a href="https://decisions.kineticgain.com/" target="_blank" rel="noreferrer">AI Procurement Decision Cards</a> this quarter. Buyer-side adoption is the harder half.</p>
+            <p>Whether probed buyer endpoints published <a href="https://decisions.kineticgain.com/" target="_blank" rel="noreferrer">AI Procurement Decision Cards</a> at the measured time.</p>
           </article>
           <article class="card">
             <h3 class="mono accent-text">§ 5 · The Signature Honor Roll</h3>
-            <p>Every vendor whose Suite documents are cryptographically signed. Public, named, alphabetized. Quiet pressure on the unsigned majority.</p>
+            <p>Signature results where the issue could verify them, reported separately from document validity.</p>
           </article>
           <article class="card">
             <h3 class="mono accent-text">§ 6 · The Methodology Appendix</h3>
-            <p>Full crawl logs, universe.csv, validator output. Every claim in the report has a reproducible artifact you can pull and rerun yourself.</p>
+            <p>Each issue's published method and available data links, including what could not be measured.</p>
           </article>
         </div>
       </div>
@@ -374,12 +369,12 @@
     <section id="subscribe" class="cta-strip">
       <div class="cta-strip-inner">
         <span class="pill mono">QUARTERLY · FREE PUBLIC EDITION</span>
-        <h2>Get Issue #5 the moment it lands.</h2>
-        <p>One email per quarter. No marketing list rentals, no surprise newsletters, no upsells you didn't ask for.</p>
-        <form class="subscribe-form" action="" method="post" onsubmit="return handleSubmit(event)">
-          <input type="email" name="email" id="subscribe-email" placeholder="you@workdomain.com" required aria-label="Email address" />
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
+        <h2>Request updates about Issue #5.</h2>
+        <p>The button opens an email draft to Kinetic Gain. Send the draft to request updates; this site does not automatically register a subscription.</p>
+        <div class="subscribe-form">
+          <input type="email" name="email" id="subscribe-email" placeholder="you@workdomain.com" required aria-label="Email address">
+          <button type="button" class="btn btn-primary" id="subscribe-open-mail">Open email draft</button>
+        </div>
         <p class="cta-fineprint" id="subscribe-fallback">
           Or just bookmark this page. Or email <a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> and we'll add you manually.
           Issues #1–#4 and the Verified Baseline are <strong>published</strong>; Issue #5 is in preparation.
@@ -391,11 +386,11 @@
       <div class="block-inner">
         <h2>What this is, in one paragraph</h2>
         <p class="prose">
-          The AI Procurement Pulse is a quarterly research publication that measures AI vendor governance disclosure using
+          The AI Procurement Pulse is a research publication about AI vendor governance disclosure using
           the open <a href="https://suite.kineticgain.com/" target="_blank" rel="noreferrer">Kinetic Gain Protocol Suite</a>
           as its substrate. It exists because AI procurement is the largest under-measured market in software, the
-          disclosure data is publicly fetchable today, and nobody has built a recurring index of who's publishing what.
-          We built it. Issues #1–#4 and the Verified Baseline are published; Issue #5 is in preparation. Subscribe.
+          disclosure data can be publicly fetched and compared at a dated point in time.
+          Issues #1–#4 and the May 2026 baseline are published; Issue #5 is not yet available here.
         </p>
       </div>
     </section>
@@ -410,7 +405,7 @@
         <div class="grid grid-3">
           <article class="card">
             <h3>Protocol Suite</h3>
-            <p><a href="https://suite.kineticgain.com/">suite.kineticgain.com</a> explains the eleven public specs this index measures across agent, evidence, procurement, and incident disclosure.</p>
+            <p><a href="https://suite.kineticgain.com/">suite.kineticgain.com</a> maps the twelve open specs. The separate <a href="https://github.com/mizcausevic-dev/mcp-kinetic-gain">mcp-kinetic-gain v0.10.0</a> packages 75 Suite tools; it is not used by this static publication page.</p>
           </article>
           <article class="card">
             <h3>Docs hub</h3>
@@ -418,7 +413,7 @@
           </article>
           <article class="card">
             <h3>Decision examples</h3>
-            <p><a href="https://examples.kineticgain.com/">examples.kineticgain.com</a> and <a href="https://directory.kineticgain.com/">directory.kineticgain.com</a> show how the disclosure layer turns into buyer-readable proof and vendor comparison.</p>
+            <p>The <a href="https://github.com/mizcausevic-dev/kinetic-gain-examples-gallery">examples-gallery repository</a> and <a href="https://directory.kineticgain.com/">directory.kineticgain.com</a> offer separate examples and discovery surfaces.</p>
           </article>
         </div>
       </div>
@@ -427,7 +422,7 @@
     <section class="block" aria-label="Buyer-side tools on the apex">
       <div class="block-inner">
         <h2>Buyer-side tools — evaluate one vendor depth-first</h2>
-        <p>Pulse measures vendor disclosure coverage across 2,044 domains every quarter. When you (a buyer) receive a disclosure from one specific vendor and need to evaluate its depth, the apex hosts the per-vendor reading tools:</p>
+        <p>The published Pulse issues report dated aggregate readings. To review a specific vendor's current disclosure, start with the separate apex tools:</p>
         <div class="grid grid-3">
           <article class="card">
             <h3>Vendor AI Disclosure Review</h3>
@@ -450,7 +445,7 @@
     <div class="foot-inner">
       <div class="foot-col">
         <strong>AI Procurement Pulse</strong>
-        <p>A Kinetic Gain Research publication. Quarterly. Free public edition; premium per-vendor edition coming Q4 2026.</p>
+        <p>A Kinetic Gain Research publication. Dated public issues; future editions are announced when available.</p>
       </div>
       <div class="foot-col">
         <strong>Built on</strong>
@@ -471,12 +466,11 @@
   <script src="/pulse-constellation.js" defer></script>
   <script src="/send-to-llm.js" defer></script>
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const email = e.target.email.value;
-      if (!email) return false;
+    function handleSubmit() {
+      const field = document.getElementById('subscribe-email');
+      if (!field.reportValidity()) return;
+      const email = field.value;
       var mailto = `mailto:pulse@kineticgain.com?subject=Subscribe%20to%20AI%20Procurement%20Pulse&body=Please%20add%20me%20to%20the%20Pulse%20subscriber%20list.%0A%0AEmail%3A%20${encodeURIComponent(email)}`;
-      (window.dataLayer = window.dataLayer || []).push({ event: 'newsletter_signup', method: 'mailto' });
       // window.location.href fails silently in most webmail-only setups (no
       // registered mail client), so no on-page confirmation ever showed. A
       // real <a> click gets the same OS handling, but we no longer treat
@@ -487,10 +481,10 @@
       link.click();
       var fallback = document.getElementById('subscribe-fallback');
       if (fallback) {
-        fallback.innerHTML = `If your email app just opened, send that draft and you're done. If nothing happened, email <a href="mailto:pulse@kineticgain.com">pulse@kineticgain.com</a> directly and mention <strong>${email.replace(/[<>&"]/g, '')}</strong>, we'll add you manually.`;
+        fallback.textContent = 'If your email app opened, send the draft to request updates. If nothing happened, email pulse@kineticgain.com directly. No subscription was recorded by this page.';
       }
-      return false;
     }
+    document.getElementById('subscribe-open-mail').addEventListener('click', handleSubmit);
   </script>
 </body>
 </html>
