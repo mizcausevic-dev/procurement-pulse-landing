@@ -1,7 +1,8 @@
 /* "Send to LLM" deep-linking. Opens the visitor's preferred AI chat client in
-   a new tab with a prompt pre-filled (page URL + a short instruction), using
+   a new tab with a prompt pre-filled (public page path + a short instruction), using
    each platform's documented query-param deep-link. No page content is
-   read or transmitted by this script, the target LLM fetches the URL itself
+   read or transmitted by this script; query parameters and fragments are
+   omitted to avoid passing accidental tokens or private state. The target LLM fetches the URL itself
    via its own browsing/retrieval, same as a human pasting a link. Drop
    <div class="send-to-llm" data-prompt="optional override"></div> anywhere;
    this script renders the buttons into it.
@@ -11,7 +12,7 @@
    <svg> is aria-hidden with the real name carried by the link's own text +
    aria-label, so nothing depends on icon recognition alone.
 
-   Ported verbatim (icon path data unchanged) from kg-suite-web's
+   Ported from kg-suite-web's
    send-to-llm.js; only the CSS class names it renders into are this repo's
    own — see the .send-to-llm* rules in index.html's page-local <style>. */
 (function () {
@@ -48,7 +49,7 @@
   }
 
   function render(container) {
-    var pageUrl = window.location.href;
+    var pageUrl = window.location.origin + window.location.pathname;
     var promptText = container.getAttribute("data-prompt") ||
       "Please explain and summarize the key takeaways of this page:";
     var links = buildLinks(pageUrl, promptText);
